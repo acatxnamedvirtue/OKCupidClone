@@ -4,15 +4,16 @@ window.OKCupid = {
   Views: {},
   Routers: {},
   initialize: function() {
-    var profiles = new OKCupid.Collections.Profiles();
-    OKCupid.Users = new OKCupid.Collections.Users();
-    OKCupid.Users.fetch({ reset: true })
-    profiles.fetch({ reset: true });
+    OKCupid.Profiles = new OKCupid.Collections.Profiles();
+    OKCupid.Profiles.fetch({ reset: true });
 
-    this.router = new OKCupid.Routers.Router({
-      collection: profiles,
-      $rootEl: $('#content')
-    });
+    OKCupid.Users = new OKCupid.Collections.Users();
+    OKCupid.Users.fetch({ reset: true });
+
+    OKCupid.Messages = new OKCupid.Collections.Messages();
+    OKCupid.Messages.fetch({ reset: true });
+
+    this.router = new OKCupid.Routers.Router({ $rootEl: $('#content') });
 
     Backbone.history.start();
   }

@@ -11,6 +11,7 @@
     <ul class="navbar-right-list group">
     <% if logged_in? %>
       <li>
+        <a href='#/messages/'>Messages</a>
         <a href='#/profiles/<%= current_user.profile.id%>/edit'>
           Edit Your Profile
         </a>

@@ -7,7 +7,7 @@ OKCupid.Collections.Users = Backbone.Collection.extend({
     var that = this;
 
     if(!user) {
-      user = new OKCupid.Models.Profile({id: id});
+      user = new OKCupid.Models.User({id: id});
       that.add(user);
       user.fetch({
         error: function() { that.remove(user); }

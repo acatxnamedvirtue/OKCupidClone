@@ -1,0 +1,21 @@
+<h1>Message</h1>
+
+<label for='message_sender'>From:<br>
+  <%= message.escape('sender_id')%><br>
+</label><br>
+
+<label for='message_recipient'>To:<br>
+  <%= message.escape('recipient_id')%><br>
+</label><br>
+
+<label for='message_title'>Title:<br>
+  <%= message.escape('title')%><br>
+</label><br>
+
+<label for='message_body'>Body:<br>
+  <%= message.escape('body')%><br>
+</label><br>
+
+<input type="submit">
+
+<a href="#/messages/">Back To Messages</a>

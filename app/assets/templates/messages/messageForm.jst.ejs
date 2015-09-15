@@ -1,0 +1,34 @@
+<ul class="errors"></ul>
+<h1>Message</h1>
+
+<label for='message_sender'>From:<br>
+  <input id='message_sender'
+         type='text'
+         name='message[sender_id]'
+         value="<%= message.escape('sender_id')%>"><br>
+</label><br>
+
+<label for='message_recipient'>To:<br>
+  <input id='message_recipient'
+         type='text'
+         name='message[recipient_id]'
+         value="<%= message.escape('recipient_id')%>"><br>
+</label><br>
+
+<label for='message_title'>Title:<br>
+  <input id='message_title'
+         type='text'
+         name='message[title]'
+         value="<%= message.escape('title')%>"><br>
+</label><br>
+
+<label for='message_body'>Body:<br>
+  <input id='message_body'
+         type='text'
+         name='message[body]'
+         value="<%= message.escape('body')%>"><br>
+</label><br>
+
+<input type="submit">
+
+<a href="#/messages/">Back To Messages</a>

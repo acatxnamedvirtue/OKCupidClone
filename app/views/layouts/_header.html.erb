@@ -10,7 +10,12 @@
   <div class="navbar-right-container">
     <ul class="navbar-right-list group">
     <% if logged_in? %>
-      <li><%= button_to "Log out", session_url, method: :delete%></li>
+      <li>
+        <a href='#/profiles/<%= current_user.profile.id%>/edit'>
+          Edit Your Profile
+        </a>
+      </li>
+      <li><%= button_to "Log out", session_url, method: :delete %></li>
     <% else %>
       <li><%= link_to "Log in", new_session_url %></li>
       <li><%= link_to "Sign up", new_user_url %></li>

@@ -1,0 +1,24 @@
+<nav class="navbar">
+  <div class="navbar-left-container group">
+    <a class="navbar-brand-link" href="#">Profile</a>
+  </div>
+
+  <div class="navbar-brand-container group">
+    <a class="navbar-brand-link" href="#">Okcupid Clone</a>
+  </div>
+
+  <div class="navbar-right-container">
+    <ul class="navbar-right-list group">
+    <% if logged_in? %>
+      <li><%= button_to "Log out", session_url, method: :delete%></li>
+    <% else %>
+      <li><%= link_to "Log in", new_session_url %></li>
+      <li><%= link_to "Sign up", new_user_url %></li>
+    <% end %>
+    </ul>
+  </div>
+</nav>
+
+<% if flash[:errors] %>
+  <%= flash[:errors].join("<br>").html_safe %>
+<% end %>

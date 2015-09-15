@@ -15,6 +15,9 @@ gem 'bcrypt', '~> 3.1.7'
 
 gem 'pry-rails'
 
+group :production do
+  gem 'rails_12factor'
+end
 
 group :development, :test do
   gem 'byebug'

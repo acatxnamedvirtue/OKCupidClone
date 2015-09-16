@@ -5,7 +5,19 @@ class User < ActiveRecord::Base
 
   before_validation :ensure_session_token
 
-  has_one :profile
+  has_one :profile,
+  class_name: 'Profile',
+  foreign_key: :user_id,
+  primary_key: :id
+
+  has_many :likes,
+  class_name: 'Likes',
+  foreign_key: :liker_id,
+  primary_key: :id
+
+  has_many :liked_profiles,
+  through: :likes,
+  source: :profile
 
   attr_reader :password
 

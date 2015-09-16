@@ -1,6 +1,6 @@
 class Api::MessagesController < ApplicationController
   def index
-    @messages = Message.all.where("sender_id = ? OR recipient_id = ?", current_user.id, current_user.id)
+    @messages = Message.all
     render json: @messages
   end
 
@@ -10,7 +10,7 @@ class Api::MessagesController < ApplicationController
   end
 
   def create
-    @message = Message.new(message_params)
+    @message = current_user.sent_messages.new(message_params)
 
     if @message.save(message_params)
       render json: @message

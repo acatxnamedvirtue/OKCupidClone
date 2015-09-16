@@ -10,6 +10,16 @@ class User < ActiveRecord::Base
   foreign_key: :user_id,
   primary_key: :id
 
+  has_many :sent_messages,
+  class_name: 'Message',
+  foreign_key: :sender_id,
+  primary_key: :id
+
+  has_many :received_messages,
+  class_name: 'Message',
+  foreign_key: :recipient_id,
+  primary_key: :id
+
   has_many :likes,
   class_name: 'Like',
   foreign_key: :liker_id,

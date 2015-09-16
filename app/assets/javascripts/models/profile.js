@@ -5,6 +5,17 @@ OKCupid.Models.Profile = Backbone.Model.extend({
     return {profile: _.clone(this.attributes)};
   },
 
+  alreadyLiked: function() {
+    var liked = false;
+    this.likers().forEach(function(liker) {
+      if(liker.id === OKCupid.CurrentUser.id) {
+        liked = true;
+      }
+    });
+
+    return liked;
+  },
+
   user: function() {
     return OKCupid.Users.findWhere({ id: this.get('user_id') });
   },

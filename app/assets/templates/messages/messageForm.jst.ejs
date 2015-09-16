@@ -2,17 +2,19 @@
 <h1>Message</h1>
 
 <label for='message_sender'>From:<br>
-  <input id='message_sender'
-         type='text'
-         name='message[sender_id]'
-         value="<%= message.escape('sender_id')%>"><br>
+  <%= sender.escape('username') %><br>
 </label><br>
 
-<label for='message_recipient'>To:<br>
-  <input id='message_recipient'
-         type='text'
-         name='message[recipient_id]'
-         value="<%= message.escape('recipient_id')%>"><br>
+<label for='message_recipient_drop_down'>To:<br>
+  <select name='message[recipient_id]'>
+    <% OKCupid.Users.each(function(user) { %>
+      <% if(user.id !== OKCupid.CurrentUser.id) { %>
+        <option value='<%= user.id %>'>
+          <%= user.escape('username') %>
+        </option>
+        <% } %>
+    <% }) %>
+  </select><br>
 </label><br>
 
 <label for='message_title'>Title:<br>

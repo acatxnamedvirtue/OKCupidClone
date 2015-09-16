@@ -1,6 +1,12 @@
 <h1><%= user.escape('username') %> </h1>
 
-<% if()
+<% if(!(profile.user_id === OKCupid.CurrentUser.id)) { %>
+  <% if (profile.alreadyLiked()) { %>
+    <button class='like'>Unlike!</button>
+  <% } else { %>
+    <button class='like'>Like!</button>
+  <% } %>
+<% } %>
 
 <label for='profile_self'>My self-summary<br>
   <%= profile.escape('self_summary')%><br>

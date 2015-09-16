@@ -7,12 +7,19 @@ OKCupid.Views.MessagesIndex = Backbone.CompositeView.extend({
   },
 
   render: function() {
+    var messagesReceived = this.collection.where({ recipient_id: OKCupid.CurrentUser.id });
+    var messagesSent = this.collection.where({ sender_id: OKCupid.CurrentUser.id});
     var content = this.template({ messages: this.collection });
     this.$el.html(content);
 
-    this.collection.each(function(message) {
+    messagesReceived.forEach(function(message) {
       var indexItem = new OKCupid.Views.MessagesIndexItem({ model: message });
-      this.$('ul.messages').append(indexItem.render().$el);
+      this.$('ul.received-messages').append(indexItem.render().$el);
+    }.bind(this));
+
+    messagesSent.forEach(function(message) {
+      var indexItem = new OKCupid.Views.MessagesIndexItem({ model: message });
+      this.$('ul.sent-messages').append(indexItem.render().$el);
     }.bind(this));
 
     return this;

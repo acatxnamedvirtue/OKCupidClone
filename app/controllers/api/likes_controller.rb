@@ -1,6 +1,6 @@
 class Api::LikesController < ApplicationController
   def index
-    @likes = Like.all.where("liker_id = ? OR profile_id = ?", current_user.id, current_user.profile.id)
+    @likes = Like.all
     render json: @likes
   end
 
@@ -14,8 +14,14 @@ class Api::LikesController < ApplicationController
     end
   end
 
+  def show
+    @like = Like.find(params[:id])
+    render json: @like
+  end
+
   def destroy
     @like = current_user.likes.find(params[:id])
+    @like.destroy()
     render json: @like
   end
 

@@ -38,7 +38,7 @@ OKCupid.Routers.Router = Backbone.Router.extend({
   },
 
   messageNew: function() {
-    var message = new OKCupid.Models.Message();
+    var message = new OKCupid.Models.Message({ sender_id: OKCupid.CurrentUser.id });
     var view = new OKCupid.Views.MessageForm({ collection: OKCupid.Messages, model: message});
     this._swapView(view);
   },

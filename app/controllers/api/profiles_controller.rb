@@ -1,12 +1,10 @@
 class Api::ProfilesController < ApplicationController
   def index
-    @profiles = Profile.all
-    render json: @profiles
+    @profiles = Profile.includes(:user).all
   end
 
   def show
-    @profile = Profile.find(params[:id])
-    render json: @profile
+    @profile = Profile.includes(:user).find(params[:id])
   end
 
   def edit

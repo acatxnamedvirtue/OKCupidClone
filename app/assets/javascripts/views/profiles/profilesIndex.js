@@ -3,7 +3,6 @@ OKCupid.Views.ProfilesIndex = Backbone.CompositeView.extend({
 
   initialize: function() {
     this.listenTo(this.collection, 'add change remove reset', this.render);
-    this.listenTo(OKCupid.Users, 'add change remove reset', this.render);
   },
 
   render: function() {
@@ -11,7 +10,7 @@ OKCupid.Views.ProfilesIndex = Backbone.CompositeView.extend({
     this.$el.html(content);
 
     this.collection.each(function(profile) {
-      if(OKCupid.CurrentUser.get('id') === profile.get('user_id')) { return; }
+      if(OKCupid.CurrentUser.id === profile.user().id) { return; }
       var indexItem = new OKCupid.Views.ProfilesIndexItem({ model: profile });
       this.$('ul.profiles').append(indexItem.render().$el);
     }.bind(this));

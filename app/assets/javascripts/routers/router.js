@@ -32,28 +32,32 @@ OKCupid.Routers.Router = Backbone.Router.extend({
   },
 
   messagesIndex: function() {
-    OKCupid.Messages.fetch();
-    var view = new OKCupid.Views.MessagesIndex({ collection: OKCupid.Messages });
+    var sentMessages = OKCupid.CurrentUser.sentMessages();
+    var receivedMessages = OKCupid.CurrentUser.receivedMessages();
+    var view = new OKCupid.Views.MessagesIndex({
+      sentMessages: sentMessages, receivedMessages: receivedMessages
+    });
     this._swapView(view);
   },
-
-  messageNew: function() {
-    var message = new OKCupid.Models.Message({ sender_id: OKCupid.CurrentUser.id });
-    var view = new OKCupid.Views.MessageForm({ collection: OKCupid.Messages, model: message});
-    this._swapView(view);
-  },
+  // 
+  // messageNew: function() {
+  //   var message = new OKCupid.Models.Message({ sender_id: OKCupid.CurrentUser.id });
+  //   var view = new OKCupid.Views.MessageForm({ collection: OKCupid.Messages, model: message});
+  //   this._swapView(view);
+  // },
 
   messageShow: function(id) {
-    var message = OKCupid.Messages.getOrFetch(id);
+    var message = OKCupid.CurrentUser.sentMessages().getOrFetch(id) ||
+      OKCupid.CurrentUser.receivedMessages().getOrFetch(id);
     var view = new OKCupid.Views.MessageShow({ model: message });
     this._swapView(view);
   },
-
-  likesIndex: function() {
-    OKCupid.Likes.fetch();
-    var view = new OKCupid.Views.LikesIndex({ collection: OKCupid.Likes });
-    this._swapView(view);
-  },
+  //
+  // likesIndex: function() {
+  //   OKCupid.Likes.fetch();
+  //   var view = new OKCupid.Views.LikesIndex({ collection: OKCupid.Likes });
+  //   this._swapView(view);
+  // },
 
   _swapView: function(view) {
     this._currentView && this._currentView.remove();

@@ -1,6 +1,32 @@
 OKCupid.Models.User = Backbone.Model.extend({
   urlRoot: 'users/',
 
+  parse: function(response) {
+    if(response.sent_messages) {
+      this.sentMessages().set(response.sent_messages, {parse: true});
+      delete response.sent_messages;
+    }
+
+    if(response.received_messages) {
+      this.receivedMessages().set(response.received_messages);
+      delete response.received_messages;
+    }
+
+    if(response.likes) {
+      this.likes().set(response.likes);
+      delete response.likes;
+    }
+
+    if(response.liked_profiles) {
+      this.likedProfiles().set(response.liked_profiles);
+      delete response.liked_profiles;
+    }
+
+    debugger
+
+    return response;
+  },
+
   toJSON: function() {
     return {user: _.clone(this.attributes)};
   },
@@ -11,19 +37,22 @@ OKCupid.Models.User = Backbone.Model.extend({
   },
 
   likes: function() {
-    return OKCupid.Likes.where({ liker_id: this.id });
+    this._likes = this._likes || new OKCupid.Collections.Likes();
+    return this._likes;
   },
 
   likedProfiles: function() {
-    var likes = this.likes();
+    this._likedProfiles = this._likedProfiles || new OKCupid.Collections.Profiles();
+    return this._likedProfiles;
+  },
 
-    var likedProfiles = [];
+  sentMessages: function() {
+    this._sentMessages = this._sentMessages || new OKCupid.Collections.Messages();
+    return this._sentMessages;
+  },
 
-    likes.forEach(function(like) {
-      var profile = OKCupid.Profiles.findWhere({ id: like.get('profile_id')})
-      likedProfiles.push(profile);
-    });
-
-    return likedProfiles;
+  receivedMessages: function() {
+    this._receivedMessages = this._receivedMessages || new OKCupid.Collections.Messages();
+    return this._receivedMessages;
   }
 });

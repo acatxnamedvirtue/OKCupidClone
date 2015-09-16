@@ -8,13 +8,6 @@ window.OKCupid = {
     OKCupid.Profiles.fetch({ reset: true });
 
     OKCupid.Users = new OKCupid.Collections.Users();
-    OKCupid.Users.fetch({ reset: true });
-
-    OKCupid.Messages = new OKCupid.Collections.Messages();
-    OKCupid.Messages.fetch({ reset: true });
-
-    OKCupid.Likes = new OKCupid.Collections.Likes();
-    OKCupid.Likes.fetch({ reset: true });
 
     OKCupid.CurrentUser = OKCupid.Users.getOrFetch($('#current_user_id').data('id'));
 

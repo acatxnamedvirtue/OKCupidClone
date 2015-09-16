@@ -7,8 +7,11 @@ OKCupid.Views.MessageShow = Backbone.CompositeView.extend({
   },
 
   render: function() {
-    var sender = OKCupid.Users.getOrFetch(this.model.get('sender_id'));
-    var recipient = OKCupid.Users.getOrFetch(this.model.get('recipient_id'));
+    if (this.model.sender()) {
+    }
+
+    var sender = this.model.sender().username;
+    var recipient = this.model.recipient().username;
     var content = this.template({ message: this.model, sender: sender, recipient: recipient });
     this.$el.html(content);
 

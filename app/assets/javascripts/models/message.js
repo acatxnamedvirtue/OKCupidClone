@@ -5,11 +5,25 @@ OKCupid.Models.Message = Backbone.Model.extend({
     return {message: _.clone(this.attributes)};
   },
 
+  parse: function(response) {
+    if(response.sender) {
+      this._sender = response.sender;
+      delete response.sent_messages;
+    }
+
+    if(response.recipient) {
+      this._recipient = response.recipient;
+      delete response.sent_messages;
+    }
+  },
+
   sender: function() {
-    return OKCupid.Users.getOrFetch(this.get('sender_id'));
+    this._sender = this._sender || {};
+    return this._sender;
   },
 
   recipient: function() {
-    return OKCupid.Users.getOrFetch(this.get('recipient_id'));
+    this._recipient = this._recipient || {};
+    return this._recipient;
   }
 });

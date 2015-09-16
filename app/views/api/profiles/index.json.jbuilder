@@ -5,6 +5,6 @@ json.array!(@profiles) do |profile|
     :job, :income, :status, :relationship_type, :offspring, :pets, :speaks, :thinking_about)
 
   json.user do
-      json.extract!(@profile.user, :id, :username, :email)
+      json.extract!(profile.user, :id, :username, :email)
   end
 end

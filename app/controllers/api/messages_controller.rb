@@ -5,7 +5,7 @@ class Api::MessagesController < ApplicationController
   end
 
   def show
-    @message = Message.find(params[:id])
+    @message = Message.includes(:sender, :recipient).find(params[:id])
     render json: @message
   end
 

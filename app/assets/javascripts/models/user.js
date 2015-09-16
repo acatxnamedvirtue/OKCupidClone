@@ -6,23 +6,24 @@ OKCupid.Models.User = Backbone.Model.extend({
   },
 
   profile: function() {
-    return OKCupid.Profiles.findWhere({ user_id: this.id });
+    var profile = OKCupid.Profiles.findWhere({ user_id: this.id });
+    return profile;
   },
 
   likes: function() {
     return OKCupid.Likes.where({ liker_id: this.id });
   },
 
-  liked_profiles: function() {
+  likedProfiles: function() {
     var likes = this.likes();
 
-    var liked_profiles = [];
+    var likedProfiles = [];
 
     likes.forEach(function(like) {
       var profile = OKCupid.Profiles.findWhere({ id: like.get('profile_id')})
-      liked_profiles.push(profile);
+      likedProfiles.push(profile);
     });
 
-    return liked_profiles;
+    return likedProfiles;
   }
 });

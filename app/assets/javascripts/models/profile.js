@@ -4,4 +4,4 @@ OKCupid.Models.Profile = Backbone.Model.extend({
   toJSON: function() {
     return {profile: _.clone(this.attributes)};
   }
-})
+});

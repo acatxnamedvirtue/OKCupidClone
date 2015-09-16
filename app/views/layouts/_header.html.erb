@@ -1,6 +1,7 @@
 <nav class="navbar">
   <div class="navbar-left-container group">
     <% if logged_in? %>
+      <div id='current_user_id' data-id='<%=current_user.id %>'></div>
       <a href='#/profiles/<%= current_user.profile.id%>'>Profile</a>
     <% end %>
   </div>

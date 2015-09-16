@@ -11,6 +11,7 @@ OKCupid.Views.ProfilesIndex = Backbone.CompositeView.extend({
     this.$el.html(content);
 
     this.collection.each(function(profile) {
+      if(OKCupid.CurrentUser.get('id') === profile.get('user_id')) { return; }
       var indexItem = new OKCupid.Views.ProfilesIndexItem({ model: profile });
       this.$('ul.profiles').append(indexItem.render().$el);
     }.bind(this));

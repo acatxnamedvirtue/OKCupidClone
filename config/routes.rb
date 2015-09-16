@@ -7,5 +7,6 @@ Rails.application.routes.draw do
   namespace :api, defaults: { format: :json } do
     resources :profiles, only: [:index, :show, :edit, :update]
     resources :messages, only: [:index, :show, :create]
+    resources :likes, only: [:index, :create, :destroy]
   end
 end

@@ -1,5 +1,7 @@
 class QuestionAnswer < ActiveRecord::Base
   validates :question_id, :question_choice_id, :user_id, :importance, presence: true
+  validates :question_id, uniqueness: { scope: :user_id,
+    message: "You have already answered this question!" }
 
   belongs_to :question,
   class_name: 'Question',

@@ -8,5 +8,8 @@ Rails.application.routes.draw do
     resources :profiles, only: [:index, :show, :edit, :update]
     resources :messages, only: [:index, :show, :create]
     resources :likes, only: [:index, :show, :create, :destroy]
+    resources :questions, only: [:index, :show, :create]
+    resources :question_choices, only: [:index, :show, :create]
+    resources :question_answers, only: [:index, :show, :create]
   end
 end

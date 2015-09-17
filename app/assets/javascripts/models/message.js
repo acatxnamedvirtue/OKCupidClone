@@ -1,5 +1,5 @@
 OKCupid.Models.Message = Backbone.Model.extend({
-  urlRoot: 'api/messages/',
+  urlRoot: '/api/messages',
 
   toJSON: function() {
     return {message: _.clone(this.attributes)};
@@ -15,6 +15,8 @@ OKCupid.Models.Message = Backbone.Model.extend({
       this._recipient = response.recipient;
       delete response.sent_messages;
     }
+
+    return response;
   },
 
   sender: function() {

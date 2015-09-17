@@ -16,18 +16,20 @@ json.received_messages do
   end
 end
 
-json.likes do
-  json.array! @user.likes do |like|
-    json.extract!(like, :id, :liker_id, :profile_id)
+json.likers do
+  json.array! @user.likers do |liker|
+    json.extract!(liker, :id, :username, :email)
   end
 end
 
-json.liked_profiles do
-  json.array! @user.liked_profiles do |profile|
-    json.extract!(profile, :id, :self_summary, :what_im_doing, :im_really_good_at,
-      :favorites, :six_things, :friday_night, :message_me_if, :orientation,
-      :ethnicity, :height, :body_type, :diet, :smokes, :drinks, :drugs, :religion,
-      :sign, :education, :job, :income, :status, :relationship_type, :offspring,
-      :pets, :speaks, :thinking_about)
+json.likes do
+  json.array! @user.likes do |like|
+    json.extract!(like, :id, :profile_id, :liker_id)
+  end
+end
+
+json.liked_users do
+  json.array! @user.liked_users do |liked_user|
+    json.extract!(liked_user, :id, :username, :email)
   end
 end

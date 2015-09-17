@@ -11,8 +11,10 @@ OKCupid.Views.MessageForm = Backbone.CompositeView.extend({
   },
 
   render: function() {
-    var sender = this.model.sender();
-    var content = this.template({ message: this.model, sender: sender });
+    OKCupid.Users.fetch();
+    var content = this.template({
+      message: this.model, sender: OKCupid.CurrentUser
+    });
     this.$el.html(content);
 
     return this;

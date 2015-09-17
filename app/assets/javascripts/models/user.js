@@ -1,5 +1,5 @@
 OKCupid.Models.User = Backbone.Model.extend({
-  urlRoot: 'users/',
+  urlRoot: '/users',
 
   parse: function(response) {
     if(response.sent_messages) {
@@ -8,13 +8,18 @@ OKCupid.Models.User = Backbone.Model.extend({
     }
 
     if(response.received_messages) {
-      this.receivedMessages().set(response.received_messages);
+      this.receivedMessages().set(response.received_messages, {parse: true});
       delete response.received_messages;
     }
 
-    if(response.likes) {
-      this.likes().set(response.likes);
-      delete response.likes;
+    if(response.likers) {
+      this.likers().set(response.likers, {parse: true});
+      delete response.likers;
+    }
+
+    if(response.liked_users) {
+      this.likedUsers().set(response.liked_users, {parse: true});
+      delete response.liked_users;
     }
 
     if(response.liked_profiles) {
@@ -22,7 +27,10 @@ OKCupid.Models.User = Backbone.Model.extend({
       delete response.liked_profiles;
     }
 
-    debugger
+    if(response.likes) {
+      this.likes().set(response.likes);
+      delete response.likes;
+    }
 
     return response;
   },
@@ -31,9 +39,9 @@ OKCupid.Models.User = Backbone.Model.extend({
     return {user: _.clone(this.attributes)};
   },
 
-  profile: function() {
-    var profile = OKCupid.Profiles.findWhere({ user_id: this.id });
-    return profile;
+  likedProfiles: function() {
+    this._likedProfiles = this._likedProfiles || new OKCupid.Collections.Profiles();
+    return this._likedProfiles;
   },
 
   likes: function() {
@@ -41,9 +49,14 @@ OKCupid.Models.User = Backbone.Model.extend({
     return this._likes;
   },
 
-  likedProfiles: function() {
-    this._likedProfiles = this._likedProfiles || new OKCupid.Collections.Profiles();
-    return this._likedProfiles;
+  likers: function() {
+    this._likers = this._likers || new OKCupid.Collections.Users();
+    return this._likers;
+  },
+
+  likedUsers: function() {
+    this._likedUsers = this._likedUsers || new OKCupid.Collections.Users();
+    return this._likedUsers;
   },
 
   sentMessages: function() {

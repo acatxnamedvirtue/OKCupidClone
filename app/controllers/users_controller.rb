@@ -5,7 +5,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.includes(:sent_messages, :received_messages, :likes, :liked_profiles)
+    @user = User.includes(:sent_messages, :received_messages, :likers, :liked_users, :likes)
       .find(params[:id])
     render 'show.json.jbuilder'
   end

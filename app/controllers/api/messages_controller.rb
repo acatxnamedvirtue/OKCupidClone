@@ -6,7 +6,6 @@ class Api::MessagesController < ApplicationController
 
   def show
     @message = Message.includes(:sender, :recipient).find(params[:id])
-    render json: @message
   end
 
   def create

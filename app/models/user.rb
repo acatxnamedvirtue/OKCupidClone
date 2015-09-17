@@ -20,14 +20,27 @@ class User < ActiveRecord::Base
   foreign_key: :recipient_id,
   primary_key: :id
 
+  # like instances where the current user is the liker
   has_many :likes,
   class_name: 'Like',
   foreign_key: :liker_id,
   primary_key: :id
 
+  # profiles that the current user has liked
   has_many :liked_profiles,
   through: :likes,
   source: :profile
+
+  # users that the current user has liked
+  has_many :liked_users,
+  through: :liked_profiles,
+  source: :user
+
+  # users who have liked the current user's profile
+  has_many :likers,
+  through: :profile,
+  source: :likers
+
 
   attr_reader :password
 

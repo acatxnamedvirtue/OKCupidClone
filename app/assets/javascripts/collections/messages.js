@@ -1,6 +1,6 @@
 OKCupid.Collections.Messages = Backbone.Collection.extend({
   model: OKCupid.Models.Message,
-  url: 'api/messages/',
+  url: '/api/messages',
 
   getOrFetch: function(id) {
     var message = this.get(id);

@@ -1,5 +1,5 @@
 OKCupid.Models.Profile = Backbone.Model.extend({
-  urlRoot: 'api/profiles/',
+  urlRoot: '/api/profiles',
 
   parse: function(response) {
     if(response.user) {
@@ -17,8 +17,8 @@ OKCupid.Models.Profile = Backbone.Model.extend({
   alreadyLiked: function() {
     var liked = false;
     var that = this;
-    OKCupid.CurrentUser.likedProfiles().forEach(function(profile) {
-      if(profile.id === that.id) {
+    OKCupid.CurrentUser.likes().each(function(like) {
+      if(that.id === like.get('profile_id')) {
         liked = true;
       }
     });
@@ -30,21 +30,4 @@ OKCupid.Models.Profile = Backbone.Model.extend({
     this._user = this._user || {};
     return this._user;
   },
-
-  // likes: function() {
-  //   return OKCupid.Likes.where({ profile_id: this.id })
-  // },
-  //
-  // likers: function() {
-  //   var likes = this.likes();
-  //
-  //   var likers = [];
-  //
-  //   likes.forEach(function(like) {
-  //     var user = OKCupid.Users.findWhere({ id: like.get('liker_id')})
-  //     likers.push(user);
-  //   });
-  //
-  //   return likers;
-  // }
 });

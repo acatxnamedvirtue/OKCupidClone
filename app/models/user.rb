@@ -5,6 +5,21 @@ class User < ActiveRecord::Base
 
   before_validation :ensure_session_token
 
+  has_many :authored_questions,
+  class_name: 'Question',
+  foreign_key: :author_id,
+  primary_key: :id
+
+  has_many :authored_question_choices,
+  class_name: 'QuestionChoice',
+  foreign_key: :author_id,
+  primary_key: :id
+
+  has_many :question_answers,
+  class_name: 'QuestionAnswers',
+  foreign_key: :user_id,
+  primary_key: :id
+
   has_one :profile,
   class_name: 'Profile',
   foreign_key: :user_id,

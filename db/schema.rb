@@ -83,6 +83,7 @@ ActiveRecord::Schema.define(version: 20150917180747) do
   end
 
   add_index "question_answers", ["question_choice_id"], name: "index_question_answers_on_question_choice_id", using: :btree
+  add_index "question_answers", ["question_id", "user_id"], name: "index_question_answers_on_question_id_and_user_id", unique: true, using: :btree
   add_index "question_answers", ["question_id"], name: "index_question_answers_on_question_id", using: :btree
   add_index "question_answers", ["user_id"], name: "index_question_answers_on_user_id", using: :btree
 

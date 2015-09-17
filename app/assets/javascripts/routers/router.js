@@ -6,7 +6,7 @@ OKCupid.Routers.Router = Backbone.Router.extend({
     'messages/' : 'messagesIndex',
     'messages/new' : 'messageNew',
     'messages/:id' : 'messageShow',
-    'likes/' : 'likesIndex'
+    'likes/' : 'likesIndex',
   },
 
   initialize: function(options) {

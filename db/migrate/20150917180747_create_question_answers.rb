@@ -8,10 +8,10 @@ class CreateQuestionAnswers < ActiveRecord::Migration
 
       t.timestamps null: false
     end
-
+    
+    add_index :question_answers, :question_id
+    add_index :question_answers, :user_id
     add_index :question_answers, [:question_id, :user_id], unique: true
     add_index :question_answers, :question_choice_id
-    add_index :question_answers, :question_id
-    add_idnex :question_answers, :user_id
   end
 end

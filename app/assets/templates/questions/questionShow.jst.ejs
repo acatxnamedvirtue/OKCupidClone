@@ -1,0 +1,19 @@
+<h1><%= question.escape('title') %></h1>
+
+<p><%= question.escape('body') %></p>
+Choices:
+<br><br>
+<radiogroup class='choices'></radiogroup>
+<br>
+Importance:
+<br>
+<radiogroup class='importance'>
+  <input type='radio' name='question_answer[importance]' value='0'>Not Important</input><br>
+  <input type='radio' name='question_answer[importance]' value='1'>Somewhat Important</input><br>
+  <input type='radio' name='question_answer[importance]' value='2'>Important</input><br>
+  <input type='radio' name='question_answer[importance]' value='3'>Mandatory</input><br>
+</radiogroup>
+
+<input type="submit">
+
+<a href="#/questions/">Back To Questions</a>

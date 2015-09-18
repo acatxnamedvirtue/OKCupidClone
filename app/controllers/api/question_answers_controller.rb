@@ -10,7 +10,7 @@ class Api::QuestionAnswersController < ApplicationController
   end
 
   def create
-    @question_answer = current_user.authored_question_answer.new(question_answer_params)
+    @question_answer = QuestionAnswer.new(question_answer_params)
 
     if @question_answer.save
       render json: @question_answer
@@ -21,6 +21,6 @@ class Api::QuestionAnswersController < ApplicationController
 
   private
   def question_answer_params
-        params.require(:question_answer).permit(:question_id, :question_choice_id, :importance))
+    params.require(:question_answer).permit(:user_id, :question_id, :question_choice_id, :importance)
   end
 end

@@ -6,6 +6,7 @@ OKCupid.Views.MessagesIndex = Backbone.CompositeView.extend({
     this.receivedMessages = options.receivedMessages;
     this.listenTo(this.sentMessages, 'add change remove reset', this.render);
     this.listenTo(this.receivedMessages, 'add change remove reset', this.render);
+    this.listenTo(OKCupid.CurrentUser, 'sync', this.render);
   },
 
   render: function() {
@@ -13,19 +14,17 @@ OKCupid.Views.MessagesIndex = Backbone.CompositeView.extend({
     this.$el.html(content);
 
     this.receivedMessages.each(function(message) {
-      var sender = message.sender().username;
-      var recipient = OKCupid.CurrentUser.get('username');
+      var sender = message.sender();
       var indexItem = new OKCupid.Views.MessagesIndexItem({
-        sender: sender, recipient: recipient, model: message
+        sender: sender, model: message
       });
       this.$('ul.received-messages').append(indexItem.render().$el);
     }.bind(this));
 
     this.sentMessages.each(function(message) {
-      var sender = OKCupid.CurrentUser.get('username');
-      var recipient = message.recipient().username;
+      var recipient = message.recipient();
       var indexItem = new OKCupid.Views.MessagesIndexItem({
-        sender: sender, recipient: recipient, model: message
+        recipient: recipient, model: message
       });
       this.$('ul.sent-messages').append(indexItem.render().$el);
     }.bind(this));

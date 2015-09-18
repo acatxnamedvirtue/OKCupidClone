@@ -7,7 +7,9 @@ OKCupid.Routers.Router = Backbone.Router.extend({
     'messages/new' : 'messageNew',
     'messages/:id' : 'messageShow',
     'likes/' : 'likesIndex',
-    'questions/' : 'questionsIndex'
+    'questions/' : 'questionsIndex',
+    'questions/new' : 'questionNew',
+    'questions/:id' : 'questionShow'
   },
 
   initialize: function(options) {
@@ -66,8 +68,22 @@ OKCupid.Routers.Router = Backbone.Router.extend({
   },
 
   questionsIndex: function() {
-    var questions = new OKCupid.Collections.Questions();
-    var view = new OKCupid.Views.LikesIndex({ collection: questions });
+    var questions = OKCupid.Questions;
+    var view = new OKCupid.Views.QuestionsIndex({ collection: questions });
+    this._swapView(view);
+  },
+
+  questionShow: function(id) {
+    var question = OKCupid.Questions.getOrFetch(id);
+    var view = new OKCupid.Views.QuestionShow({ model: question });
+    this._swapView(view);
+  },
+
+  questionNew: function() {
+    var question = new OKCupid.Models.Question({ sender_id: OKCupid.CurrentUser.id });
+    var view = new OKCupid.Views.QuestionForm({
+      collection: OKCupid.CurrentUser.authoredQuestions(), model: question
+    });
     this._swapView(view);
   },
 

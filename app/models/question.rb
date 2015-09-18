@@ -12,7 +12,7 @@ class Question < ActiveRecord::Base
   primary_key: :id
 
   has_many :question_answers,
-  class_name: 'QuestionAnswers',
+  class_name: 'QuestionAnswer',
   foreign_key: :question_id,
   primary_key: :id
 end

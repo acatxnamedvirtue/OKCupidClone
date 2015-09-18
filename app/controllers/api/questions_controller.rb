@@ -5,8 +5,7 @@ class Api::QuestionsController < ApplicationController
   end
 
   def show
-    @question = Question.find(params[:id])
-    render json: @question
+    @question = Question.includes(:author, :question_choices, :question_answers).find(params[:id])
   end
 
   def create

@@ -1,6 +1,6 @@
 OKCupid.Collections.Profiles = Backbone.Collection.extend({
   model: OKCupid.Models.Profile,
-  url: 'api/profiles/',
+  url: '/api/profiles/',
 
   getOrFetch: function(id) {
     var profile = this.get(id);

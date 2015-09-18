@@ -13,7 +13,6 @@ OKCupid.Views.ProfileShow = Backbone.CompositeView.extend({
     var user = this.model.user();
     var content = this.template({ profile: this.model, user: user });
     this.$el.html(content);
-    console.log(user.username);
 
     return this;
   },

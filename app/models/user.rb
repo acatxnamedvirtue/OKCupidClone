@@ -10,13 +10,17 @@ class User < ActiveRecord::Base
   foreign_key: :author_id,
   primary_key: :id
 
+  has_many :answered_questions,
+  through: :question_answers,
+  source: :question
+
   has_many :authored_question_choices,
   class_name: 'QuestionChoice',
   foreign_key: :author_id,
   primary_key: :id
 
   has_many :question_answers,
-  class_name: 'QuestionAnswers',
+  class_name: 'QuestionAnswer',
   foreign_key: :user_id,
   primary_key: :id
 

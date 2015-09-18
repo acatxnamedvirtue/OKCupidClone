@@ -1,5 +1,5 @@
 OKCupid.Models.User = Backbone.Model.extend({
-  urlRoot: '/users',
+  urlRoot: '/api/users',
 
   parse: function(response) {
     if(response.sent_messages) {
@@ -30,6 +30,21 @@ OKCupid.Models.User = Backbone.Model.extend({
     if(response.likes) {
       this.likes().set(response.likes);
       delete response.likes;
+    }
+
+    if(response.questions) {
+      this.questions().set(response.questions);
+      delete response.questions;
+    }
+
+    if(response.answered_questions) {
+      this.answeredQuestions().set(response.answered_questions);
+      delete response.answered_questions;
+    }
+
+    if(response.authored_questions) {
+      this.authoredQuestions().set(response.authored_questions);
+      delete response.authored_questions;
     }
 
     return response;
@@ -67,5 +82,20 @@ OKCupid.Models.User = Backbone.Model.extend({
   receivedMessages: function() {
     this._receivedMessages = this._receivedMessages || new OKCupid.Collections.Messages();
     return this._receivedMessages;
+  },
+
+  questions: function() {
+    this._questions = this._questions || new OKCupid.Collections.Questions();
+    return this._questions;
+  },
+
+  answeredQuestions: function() {
+    this._answeredQuestions = this._answeredQuestions || new OKCupid.Collections.Questions();
+    return this._answeredQuestions;
+  },
+
+  authoredQuestions: function() {
+    this._authoredQuestions = this._authoredQuestions || new OKCupid.Collections.Questions();
+    return this._authoredQuestions;
   }
 });

@@ -1,1 +1,3 @@
-<a href='#/messages/<%= message.id %>'>Message #<%= message.id %></a>
+<a href='#/messages/<%= message.id %>'><%= message.escape('title') %></a>
+<% if(sender) { %>From: <a href='#/profiles/<%= sender.id %>'><%= sender.username %></a><% } %>
+<% if(recipient) { %>To: <a href='#/profiles/<%= recipient.id %>'><%= recipient.username %></a><% } %>

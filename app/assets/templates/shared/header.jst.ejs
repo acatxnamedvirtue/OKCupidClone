@@ -5,7 +5,8 @@
   <p>
     Signed in as:
     <a href="#/profiles/<%= OKCupid.CurrentUser.id %>"><%= OKCupid.CurrentUser.escape("username") %></a> |
-    <a href="#" id="sign-out-link">Sign Out</a>
+    <a href="#" id="sign-out-link">Sign Out</a> | 
+    <a href='#/profiles/<%= OKCupid.CurrentUser.id %>/edit'>Edit Your Profile</a>
   </p>
 
 <% } else { %>

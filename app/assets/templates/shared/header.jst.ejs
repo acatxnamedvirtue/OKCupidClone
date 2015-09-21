@@ -1,21 +1,41 @@
-<h1>OKCupid</h1>
-
 <% if(OKCupid.CurrentUser.isSignedIn()) { %>
 
   <p>
     Signed in as:
     <a href="#/profiles/<%= OKCupid.CurrentUser.id %>"><%= OKCupid.CurrentUser.escape("username") %></a> |
-    <a href="#" id="sign-out-link">Sign Out</a> | 
+    <a href="#" id="sign-out-link">Sign Out</a> |
     <a href='#/profiles/<%= OKCupid.CurrentUser.id %>/edit'>Edit Your Profile</a>
+    <a href='#/questions/'>Questions</a>
+    <a href='#/messages/'>Messages</a>
+    <a href='#/likes/'>Likes</a>
   </p>
 
 <% } else { %>
+<nav group>
+  <!-- <img src="https://www.okcupid.com/"> -->
 
-  <p>
-    <a href="#users/new">Sign Up</a> |
-    <a href="#session/new">Sign In</a>
+  <p class="sign-in group">
+    <span class='sign-in'>Have an account?</span>
+    <a class='sign-in' href="#session/new">Sign in</a>
   </p>
+  <h1>OKCupid</h1>
+
+  <p class='desc'>Join the best free dating site on Earth.</p>
+</nav>
+  <form class='sign-up'>I am a
+    <select>
+      <option selected>Straight</option>
+      <option>Gay</option>
+      <option>Bisexual</option>
+    </select>
+
+    <select>
+      <option>Man</option>
+      <option selected>Woman</option>
+    </select>
+    <button>Continue</button>
+  </form>
+      <!-- <a href="#users/new">Sign Up</a> | -->
+
 
 <% } %>
-
-<hr>

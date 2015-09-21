@@ -22,18 +22,22 @@ OKCupid.Routers.Router = Backbone.Router.extend({
   },
 
   profileShow: function(id) {
+    if (!this._requireSignedIn()) { return; }
+
     var profile = OKCupid.Profiles.getOrFetch(id);
     var view = new OKCupid.Views.ProfileShow({ model: profile });
     this._swapView(view);
   },
 
   profileEdit: function(id) {
+    if (!this._requireSignedIn()) { return; }
     var profile = OKCupid.Profiles.getOrFetch(id);
     var view = new OKCupid.Views.ProfileForm({ collection: OKCupid.Profiles, model: profile });
     this._swapView(view);
   },
 
   profilesIndex: function() {
+    if (!this._requireSignedIn()) { return; }
     OKCupid.Profiles.fetch();
     var view = new OKCupid.Views.ProfilesIndex({ collection: OKCupid.Profiles });
     this._swapView(view);
@@ -135,7 +139,7 @@ OKCupid.Routers.Router = Backbone.Router.extend({
   },
 
   _goHome: function() {
-    Backbone.history.navigate("", { trigger: true });
+    Backbone.history.navigate("session/new", { trigger: true });
   },
 
   _swapView: function(view) {

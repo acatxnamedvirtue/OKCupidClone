@@ -13,3 +13,132 @@
  *= require_tree .
  *= require_self
  */
+
+/* RESET */
+
+html, body, nav, div, header, h1, h2, p, main, a, form, label, button {
+  border: 0;
+  outline: 0;
+  margin: 0;
+  padding: 0;
+
+  text-decoration: inherit;
+  vertical-align: inherit;
+  box-sizing: inherit;
+  text-align: inherit;
+  font: inherit;
+  color: inherit;
+
+  background: transparent;
+}
+
+ul {
+  list-style: none;
+}
+
+body {
+  font-family: 'Open Sans',sans-serif;
+}
+
+img {
+  display: block;
+}
+
+/* HEADER */
+
+#header {
+
+}
+
+#header h1 {
+  font-size: 50px;
+  text-align: center;
+  margin: 200px auto;
+  text-shadow:
+  -1px -1px 10px #fff,
+  1px -1px 10px #fff,
+  -1px 1px 10px #fff,
+  1px 1px 10px #fff;
+
+  color: #104DA1;
+}
+
+#header span.sign-in {
+  float: left;
+  margin: 10px 0 0 0;
+}
+
+#header p.sign-in {
+  float: right;
+  margin: 40px 21% 0 0;
+  color: #C9E0E8;
+}
+
+#header a.sign-in {
+  float: left;
+  margin: 0 0 0 20px;
+  display: block;
+  text-align: right;
+  font-size: 15px;
+  font-weight: 400;
+  border: 1px solid #4879C1;
+  padding: 10px 19px;
+
+  border-radius: 2px;
+  vertical-align: middle;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+/* sign-in */
+
+#main .sign-in {
+  display: none;
+}
+
+#header form.sign-up {
+  display: block;
+  margin: 200px auto;
+  font-size: 22px;
+  text-align: center;
+}
+
+#header form.sign-up > select {
+  width: 200px;
+  height: 55px;
+  font-size: 25px;
+  padding: 0 10px;
+}
+
+#header form.sign-up option {
+}
+
+#header form.sign-up > button {
+  background: #48E588;
+  cursor: pointer;
+  font-size: 16px;
+  width: 165px;
+  height: 55px;
+  display: block;
+  float: right;
+  margin: 0 150px 0 0;
+}
+
+#header p.desc {
+  font-size: 36px;
+  text-align: center;
+  margin: 200px auto;
+}
+
+#header form.sign-up > button:hover {
+  background: #48E588;
+  /*transition: background 1ms;*/
+}
+
+
+/* content */
+
+body {
+  background: #104DA1;
+  color: #fff;
+}

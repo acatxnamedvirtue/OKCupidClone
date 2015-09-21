@@ -1,0 +1,20 @@
+<h1>OKCupid</h1>
+
+<% if(OKCupid.CurrentUser.isSignedIn()) { %>
+
+  <p>
+    Signed in as:
+    <a href="#/profiles/<%= OKCupid.CurrentUser.id %>"><%= OKCupid.CurrentUser.escape("username") %></a> |
+    <a href="#" id="sign-out-link">Sign Out</a>
+  </p>
+
+<% } else { %>
+
+  <p>
+    <a href="#users/new">Sign Up</a> |
+    <a href="#session/new">Sign In</a>
+  </p>
+
+<% } %>
+
+<hr>

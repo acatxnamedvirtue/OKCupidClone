@@ -11,14 +11,13 @@ window.OKCupid = {
     OKCupid.Questions = new OKCupid.Collections.Questions();
     OKCupid.Questions.fetch({ reset: true });
 
-    OKCupid.CurrentUser = OKCupid.Users.getOrFetch($('#current_user_id').data('id'));
+    OKCupid.CurrentUser = new OKCupid.Models.CurrentUser();
+    OKCupid.CurrentUser.fetch();
 
-    this.router = new OKCupid.Routers.Router({ $rootEl: $('#content') });
+    this.header = new OKCupid.Views.Header({ el: "#header" });
+
+    this.router = new OKCupid.Routers.Router({ $rootEl: $('#main') });
 
     Backbone.history.start();
   }
 };
-
-$(document).ready(function(){
-  OKCupid.initialize();
-});

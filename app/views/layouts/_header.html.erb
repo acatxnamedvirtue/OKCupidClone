@@ -1,10 +1,4 @@
 <nav class="navbar">
-  <div class="navbar-left-container group">
-    <% if logged_in? %>
-      <div id='current_user_id' data-id='<%=current_user.id %>'></div>
-      <a href='#/profiles/<%= current_user.profile.id%>'>Profile</a>
-    <% end %>
-  </div>
 
   <div class="navbar-brand-container group">
     <a class="navbar-brand-link" href="#">Okcupid Clone</a>
@@ -12,20 +6,12 @@
 
   <div class="navbar-right-container">
     <ul class="navbar-right-list group">
-    <% if logged_in? %>
       <li>
+        <a href='#/profiles/<%= current_user.id %>/edit'>Edit Your Profile</a>
         <a href='#/questions/'>Questions</a>
         <a href='#/messages/'>Messages</a>
         <a href='#/likes/'>Likes</a>
-        <a href='#/profiles/<%= current_user.profile.id%>/edit'>
-          Edit Your Profile
-        </a>
       </li>
-      <li><%= button_to "Log out", session_url, method: :delete %></li>
-    <% else %>
-      <li><%= link_to "Log in", new_session_url %></li>
-      <li><%= link_to "Sign up", new_api_user_url %></li>
-    <% end %>
     </ul>
   </div>
 </nav>

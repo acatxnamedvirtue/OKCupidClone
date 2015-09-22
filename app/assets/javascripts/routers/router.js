@@ -37,7 +37,7 @@ OKCupid.Routers.Router = Backbone.Router.extend({
   },
 
   profilesIndex: function() {
-    if (!this._requireSignedIn()) { return; }
+    // if (!this._requireSignedIn()) { return; }
     OKCupid.Profiles.fetch();
     var view = new OKCupid.Views.ProfilesIndex({ collection: OKCupid.Profiles });
     this._swapView(view);
@@ -98,7 +98,7 @@ OKCupid.Routers.Router = Backbone.Router.extend({
 
   userNew: function() {
     if (!this._requireSignedOut()) { return; }
-
+    debugger
     var model = new OKCupid.Models.User();
     var formView = new OKCupid.Views.UsersForm({
       collection: OKCupid.Users,

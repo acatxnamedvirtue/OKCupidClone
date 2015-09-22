@@ -5,7 +5,7 @@ OKCupid.Views.SignIn = Backbone.View.extend({
   },
 
   events: {
-    'submit form': 'submit'
+    'submit form': 'submit',
   },
 
   template: JST['shared/signIn'],

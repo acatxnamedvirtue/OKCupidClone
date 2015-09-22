@@ -19,20 +19,6 @@ OKCupid.Views.UsersForm = Backbone.View.extend({
   submit: function(e) {
     e.preventDefault();
 
-    var $form = $(e.currentTarget);
-    var userData = $form.serializeJSON().user;
-    var that = this;
-
-    this.model.set(userData);
-    this.model.save({}, {
-      success: function() {
-        OKCupid.CurrentUser.fetch();
-        that.collection.add(that.model, { merge: true});
-        Backbone.history.navigate('', { trigger: true });
-      },
-      error: function(data) {
-
-      }
-    });
+    
   }
 });

@@ -8,22 +8,22 @@
 password = BCrypt::Password.create("123456")
 
 users = User.create([
-  { username: 'Chad', email: 'chad@nyu.edu', password_digest: BCrypt::Password.create('123456') },
-  { username: 'Tyler', email: 'tyler@aa.io', password_digest: BCrypt::Password.create('123456') },
-  { username: 'Trish', email: 'trish@nyu.edu', password_digest: BCrypt::Password.create('123456') },
-  { username: 'Adam', email: 'adam@aa.io', password_digest: BCrypt::Password.create('123456') },
-  { username: 'Lexi', email: 'lexi@gmail.com', password_digest: BCrypt::Password.create('123456') },
-  { username: 'Hannah', email: 'hannah@gmail.com', password_digest: BCrypt::Password.create('123456') },
-  { username: 'Liz', email: 'liz@gmail.com', password_digest: BCrypt::Password.create('123456') },
-  { username: 'Austin', email: 'austin@embryriddle.edu', password_digest: BCrypt::Password.create('123456') },
-  { username: 'Logan', email: 'logan@whoknows.com', password_digest: BCrypt::Password.create('123456') },
-  { username: 'Carl', email: 'carl@aa.io', password_digest: BCrypt::Password.create('123456') },
-  { username: 'Conz', email: 'conz@aa.io', password_digest: BCrypt::Password.create('123456') },
-  { username: 'Jonathan', email: 'jonathan@aa.io', password_digest: BCrypt::Password.create('123456') },
-  { username: 'Tommy', email: 'tommy@aa.io', password_digest: BCrypt::Password.create('123456') },
-  { username: 'Ariel', email: 'ariel@aa.io', password_digest: BCrypt::Password.create('123456') },
-  { username: 'Chris', email: 'chris@aa.io', password_digest: BCrypt::Password.create('123456') },
-  { username: 'Erika', email: 'erika@fsu.edu', password_digest: BCrypt::Password.create('123456') }
+  { username: 'Chad', email: 'chad@nyu.edu', password_digest: BCrypt::Password.create('123456'), month: '03', day: '23', year: '1989', orientation: 'Gay', gender: 'Female', country: 'United States', zip_code: '32303' },
+  { username: 'Tyler', email: 'tyler@aa.io', password_digest: BCrypt::Password.create('123456'), month: '03', day: '23', year: '1989', orientation: 'Gay', gender: 'Female', country: 'United States', zip_code: '32303' },
+  { username: 'Trish', email: 'trish@nyu.edu', password_digest: BCrypt::Password.create('123456'), month: '03', day: '23', year: '1989', orientation: 'Gay', gender: 'Female', country: 'United States', zip_code: '32303' },
+  { username: 'Adam', email: 'adam@aa.io', password_digest: BCrypt::Password.create('123456'), month: '03', day: '23', year: '1989', orientation: 'Gay', gender: 'Female', country: 'United States', zip_code: '32303' },
+  { username: 'Lexi', email: 'lexi@gmail.com', password_digest: BCrypt::Password.create('123456'), month: '03', day: '23', year: '1989', orientation: 'Gay', gender: 'Female', country: 'United States', zip_code: '32303' },
+  { username: 'Hannah', email: 'hannah@gmail.com', password_digest: BCrypt::Password.create('123456'), month: '03', day: '23', year: '1989', orientation: 'Gay', gender: 'Female', country: 'United States', zip_code: '32303' },
+  { username: 'Liz', email: 'liz@gmail.com', password_digest: BCrypt::Password.create('123456'), month: '03', day: '23', year: '1989', orientation: 'Gay', gender: 'Female', country: 'United States', zip_code: '32303' },
+  { username: 'Austin', email: 'austin@embryriddle.edu', password_digest: BCrypt::Password.create('123456'), month: '03', day: '23', year: '1989', orientation: 'Gay', gender: 'Female', country: 'United States', zip_code: '32303' },
+  { username: 'Logan', email: 'logan@whoknows.com', password_digest: BCrypt::Password.create('123456'), month: '03', day: '23', year: '1989', orientation: 'Gay', gender: 'Female', country: 'United States', zip_code: '32303' },
+  { username: 'Carl', email: 'carl@aa.io', password_digest: BCrypt::Password.create('123456'), month: '03', day: '23', year: '1989', orientation: 'Gay', gender: 'Female', country: 'United States', zip_code: '32303' },
+  { username: 'Conz', email: 'conz@aa.io', password_digest: BCrypt::Password.create('123456'), month: '03', day: '23', year: '1989', orientation: 'Gay', gender: 'Female', country: 'United States', zip_code: '32303' },
+  { username: 'Jonathan', email: 'jonathan@aa.io', password_digest: BCrypt::Password.create('123456'), month: '03', day: '23', year: '1989', orientation: 'Gay', gender: 'Female', country: 'United States', zip_code: '32303' },
+  { username: 'Tommy', email: 'tommy@aa.io', password_digest: BCrypt::Password.create('123456'), month: '03', day: '23', year: '1989', orientation: 'Gay', gender: 'Female', country: 'United States', zip_code: '32303' },
+  { username: 'Ariel', email: 'ariel@aa.io', password_digest: BCrypt::Password.create('123456'), month: '03', day: '23', year: '1989', orientation: 'Gay', gender: 'Female', country: 'United States', zip_code: '32303' },
+  { username: 'Chris', email: 'chris@aa.io', password_digest: BCrypt::Password.create('123456'), month: '03', day: '23', year: '1989', orientation: 'Gay', gender: 'Female', country: 'United States', zip_code: '32303' },
+  { username: 'Erika', email: 'erika@fsu.edu', password_digest: BCrypt::Password.create('123456'), month: '03', day: '23', year: '1989', orientation: 'Gay', gender: 'Female', country: 'United States', zip_code: '32303' }
   ])
 
 profiles = Profile.create([

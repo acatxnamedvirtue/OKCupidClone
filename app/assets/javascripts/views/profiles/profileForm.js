@@ -1,4 +1,4 @@
-OKCupid.Views.ProfileForm = Backbone.CompositeView.extend({
+this.OKCupid.Views.ProfileForm = Backbone.CompositeView.extend({
   tagName: 'form',
   template: JST['profiles/profileForm'],
   events: {

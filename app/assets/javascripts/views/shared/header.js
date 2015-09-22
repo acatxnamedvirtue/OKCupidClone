@@ -21,7 +21,7 @@ OKCupid.Views.Header = Backbone.View.extend({
     e.preventDefault();
     OKCupid.CurrentUser.signOut({
       success: function() {
-        Backbone.history.navigate('session/new', { trigger: true });
+        Backbone.history.navigate('#/splash', { trigger: true });
       }
     });
   }

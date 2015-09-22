@@ -1,0 +1,54 @@
+<nav class='sign-in group'>
+  <span>Have an account?</span>
+  <a href="#sign-in-modal">Sign in</a>
+
+<!-- <h1>OKCupid</h1> -->
+<img src='OKCupid-logo.png'>
+
+  <p>Join the best free dating site on Earth.</p>
+</nav>
+<nav id='continue' class='sign-up-nav group'>
+  <form class='sign-up'>I am a
+    <select name='user[orientation]'>
+      <option value='Straight' selected>Straight</option>
+      <option value='Gay'>Gay</option>
+      <option value='Bisexual'>Bisexual</option>
+    </select>
+
+    <select name='user[gender]'>
+      <option value='Female' selected>Woman</option>
+      <option value='Male'>Man</option>
+    </select>
+
+    <a href='#continue' class='sign-up-continue'>Continue</a>
+  </form>
+</nav>
+
+<nav class='sign-up-more-info group'>
+</nav>
+
+<div id="sign-in-modal" class="modalDialog">
+  <div>
+    <a href='#' title='Close' class='close'>X</a>
+    <h2>Sign in</h2>
+    <form class='sign-in-form'>
+      <input
+        type='text'
+        name='user[username_or_email]'
+        placeholder='Your email or username'><br>
+      <input
+        type='password'
+        name='user[password]'
+        placeholder='Password'><br>
+      <button>Let's go</button>
+    </form>
+    <br>
+    <a class='password' href='#/password_reset'>Forgot your password?</a>
+    <br>
+    <br>
+    <p> ------------------------ or ------------------------ </p>
+    <br>
+    <br>
+    <button>Sign In w/ Facebook</button>
+  </div>
+</div>

@@ -1,0 +1,307 @@
+/* SIGN IN LINK SECTION */
+
+.sign-in {
+  position: relative;
+}
+
+.sign-in > img {
+  display: block;
+  font-size: 100px;
+  text-align: center;
+  margin: 50px auto;
+
+  text-shadow:
+  -1px -1px 10px #fff,
+  1px -1px 10px #fff,
+  -1px 1px 10px #fff,
+  1px 1px 10px #fff;
+
+  color: #104DA1;
+}
+.sign-in > span {
+  position: absolute;
+  top: 11px;
+  right: 500px;
+  text-align: right;
+  display: block;
+}
+
+.sign-in > p {
+  margin: 50px 0 0 0;
+  text-align: center;
+  color: #C9E0E8;
+  font-size: 50px;
+  font-weight: 100;
+}
+
+.sign-in > a {
+  position: absolute;
+  top: 0px;
+  right:  400px;
+
+  display: block;
+  text-align: right;
+  font-size: 15px;
+  font-weight: 300;
+  border: 1px solid #4879C1;
+  padding: 10px 19px;
+
+  border-radius: 2px;
+  vertical-align: middle;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+#main .sign-in > a:hover {
+  background: #1F57A3;
+  transition: background 200ms;
+}
+
+/* SIGN IN MODAL */
+.modalDialog .password {
+  color: #949aa6;
+  display: block;
+  text-align: center;
+}
+
+.modalDialog .password:hover {
+  color: #474D59;
+}
+
+.modalDialog p {
+  color: #474D59;
+  display: block;
+  text-align: center;
+}
+
+.modalDialog input {
+  padding-left: 10px;
+  display: block;
+  margin: 0 auto;
+  color: #fff;
+  width: 215px;
+  height: 50px;
+  font-size: 15px;
+  color: #5e6573;
+}
+
+.modalDialog button {
+  text-align: center;
+  vertical-align: center;
+  display: block;
+  background: #3260c7;
+  color: #fff;
+  margin: 0 auto;
+  width: 215px;
+  height: 50px;
+  cursor: pointer;
+}
+
+.modalDialog button:hover {
+  background: #1F57A3;
+  transition: background 200ms;
+}
+
+.modalDialog {
+  position: fixed;
+  font-family: 'Open Sans',sans-serif;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: rgba(0,0,0,0.8);
+	z-index: 99999;
+	opacity:0;
+	-webkit-transition: opacity 400ms ease-in;
+	-moz-transition: opacity 400ms ease-in;
+	transition: opacity 400ms ease-in;
+	pointer-events: none;
+}
+
+.modalDialog:target {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modalDialog > div {
+  width: 300px;
+  height: 450px;
+	position: relative;
+	margin: 10% auto;
+	padding: 5px 20px 13px 20px;
+	border-radius: 10px;
+	background: #fff;
+}
+
+.close {
+	background: #606061;
+	color: #FFFFFF;
+	line-height: 25px;
+	position: absolute;
+	right: -12px;
+	text-align: center;
+	top: -10px;
+	width: 24px;
+	text-decoration: none;
+	font-weight: bold;
+	-webkit-border-radius: 12px;
+	-moz-border-radius: 12px;
+	border-radius: 12px;
+	-moz-box-shadow: 1px 1px 3px #000;
+	-webkit-box-shadow: 1px 1px 3px #000;
+	box-shadow: 1px 1px 3px #000;
+}
+
+.close:hover {
+  background: #00d9ff;
+}
+
+/* SIGN UP SECTION */
+
+.sign-up-nav > form {
+  display: block;
+  margin: 50px 0 0 25%;
+  font-size: 22px;
+  font-weight: 300;
+  text-align: center;
+  width: 800px;
+}
+
+.sign-up-nav > form > select {
+  width: 250px;
+  height: 55px;
+  font-size: 22px;
+  padding: 0 10px;
+  color: #5E6573;
+  border-radius: 5px;
+}
+
+.sign-up-nav > form > a {
+  background: #00D280;
+  display: block;
+  cursor: pointer;
+  font-size: 16px;
+  width: 100px;
+  float: right;
+  padding: 17px 20px;
+  vertical-align: middle;
+  border-radius: 5px;
+}
+
+.sign-up-nav > form > a:hover {
+  background: #48E588;
+  transition: background 200ms;
+}
+
+.sign-up-nav:target {
+  /*transition: display 1000ms;*/
+  display: none;
+}
+
+.sign-up-nav {
+  transition: display 1000ms;
+}
+
+.sign-up-more-info {
+  display: block;
+}
+
+.sign-up-more-info > nav {
+  float: left;
+  display: block;
+  margin: 150px 50px 0 35%;
+}
+
+.sign-up-more-info > nav > div {
+  margin: 0 0 10px 0;
+  font-size: 15px;
+  text-align: center;
+  color: #D5E0F8;
+}
+
+.sign-up-more-info .country-zip label {
+  float: left;
+  display: block;
+  margin: 5px 20px 0 0;
+}
+
+.sign-up-more-info .country-zip select {
+  margin: 5px 0 0 0;
+  height: 46px;
+  width: 150px;
+  background: #fff;
+}
+
+.sign-up-more-info .country-zip input {
+  height: 40px;
+  width: 150px;
+}
+
+.sign-up-more-info input {
+  margin: 5px 0 0 0;
+}
+
+.sign-up-more-info .birthdate {
+  float: left;
+  display: block;
+  width: 91px;
+  height: 40px;
+  margin: 5px 10px 0 0;
+}
+
+.sign-up-more-info .email {
+  width: 320px;
+  height: 40px;
+}
+
+.sign-up-more-info .username {
+  width: 320px;
+  height: 40px;
+}
+
+.sign-up-more-info .password{
+  width: 320px;
+  height: 40px;
+}
+
+.sign-up-more-info label {
+  margin-top: 5px;
+  color: #D5E0F8;
+}
+
+.sign-up-more-info > form {
+  float: left;
+  display: block;
+  margin: 50px;
+}
+
+.sign-up-more-info input, .sign-up-more-info select, .sign-up-more-info option {
+  border-radius: 2px;
+  padding: 0 0 0 10px;
+  /*text-align: center;*/
+  font-size: 15px;
+  color: #5E6573;
+}
+
+.sign-up-more-info button {
+  height: 50px;
+  width: 335px;
+  border-radius: 2px;
+  color: #fff;
+  background: #4c7bd9;
+  text-align: center;
+  font-size: 18px;
+  overflow: none;
+}
+
+.sign-up-more-info button:hover {
+  background: #618BDD;
+  transition: background 200ms;
+}
+
+.sign-up-more-info > h2 {
+  display: block;
+  text-align: center;
+  font-weight: 300;
+  font-size: 36px;
+}

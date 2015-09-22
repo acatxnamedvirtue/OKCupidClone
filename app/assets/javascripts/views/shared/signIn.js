@@ -17,11 +17,11 @@ OKCupid.Views.SignIn = Backbone.View.extend({
     return this;
   },
 
-  submit: function(e) {
+  signIn: function(e) {
     e.preventDefault();
     var $form = $(e.currentTarget);
     var formData = $form.serializeJSON().user;
-debugger
+
     OKCupid.CurrentUser.signIn({
       usernameOrEmail: formData.username_or_email,
       password: formData.password,

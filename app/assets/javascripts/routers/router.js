@@ -12,13 +12,19 @@ OKCupid.Routers.Router = Backbone.Router.extend({
     'questions/:id' : 'questionShow',
     'session/new' : 'signIn',
     'users/new' : 'userNew',
-    'users/:id' : 'userShow'
+    'users/:id' : 'userShow',
+    'splash' : 'splashPage'
   },
 
   initialize: function(options) {
     this.$rootEl = options.$rootEl;
     OKCupid.Users = new OKCupid.Collections.Users();
     OKCupid.Users.fetch();
+  },
+
+  splashPage: function() {
+    var view = new OKCupid.Views.SplashPage();
+    this._swapView(view);
   },
 
   profileShow: function(id) {
@@ -37,7 +43,7 @@ OKCupid.Routers.Router = Backbone.Router.extend({
   },
 
   profilesIndex: function() {
-    // if (!this._requireSignedIn()) { return; }
+    if (!this._requireSignedIn()) { return; }
     OKCupid.Profiles.fetch();
     var view = new OKCupid.Views.ProfilesIndex({ collection: OKCupid.Profiles });
     this._swapView(view);
@@ -98,7 +104,7 @@ OKCupid.Routers.Router = Backbone.Router.extend({
 
   userNew: function() {
     if (!this._requireSignedOut()) { return; }
-    debugger
+
     var model = new OKCupid.Models.User();
     var formView = new OKCupid.Views.UsersForm({
       collection: OKCupid.Users,
@@ -120,11 +126,14 @@ OKCupid.Routers.Router = Backbone.Router.extend({
 
   _requireSignedIn: function(callback) {
     if (!OKCupid.CurrentUser.isSignedIn()) {
-      callback = callback || this._goHome.bind(this);
-      this.signIn(callback);
+      if(callback){
+        this.signIn(callback);
+      } else {
+        this._goHome();
+      }
       return false;
     }
-
+    
     return true;
   },
 
@@ -139,7 +148,7 @@ OKCupid.Routers.Router = Backbone.Router.extend({
   },
 
   _goHome: function() {
-    Backbone.history.navigate("session/new", { trigger: true });
+    Backbone.history.navigate("#/splash", { trigger: true });
   },
 
   _swapView: function(view) {

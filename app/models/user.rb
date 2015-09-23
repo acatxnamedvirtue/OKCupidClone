@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
-  validates :username, :email, :password_digest, :session_token, presence: true
+  validates :username, :email, :password_digest, :session_token, :sex_orientation,
+    :gender, :month, :day, :year, :zip_code, :country, presence: true
   validates :password, length: { minimum: 6, allow_nil: true }
   validates :username, :email, :session_token, uniqueness: true
 
@@ -67,6 +68,29 @@ class User < ActiveRecord::Base
     user = User.find_by(username: username_or_email) ||
       User.find_by(email: username_or_email)
     user && user.is_password?(password) ? user : nil
+  end
+
+  def self.find_or_create_by_auth_hash(auth_hash)
+    user = User.find_by(provider: auth_hash[:provider], uid: auth_hash[:uid])
+
+    unless user
+      user = User.create!(
+        username: auth_hash[:info][:name],
+        provider: auth_hash[:provider],
+        uid: auth_hash[:uid],
+        email: auth_hash[:info][:name],
+        password: SecureRandom::urlsafe_base64,
+        sex_orientation: "Bisexual",
+        gender: "Female",
+        month: "1",
+        day: "1",
+        year: "1990",
+        zip_code: '10003',
+        country: "United States"
+        )
+    end
+
+    user
   end
 
   def is_password?(password)

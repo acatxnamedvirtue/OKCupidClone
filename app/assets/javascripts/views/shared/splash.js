@@ -2,7 +2,6 @@ OKCupid.Views.SplashPage = Backbone.View.extend({
   template: JST['shared/splash'],
 
   initialize: function(options) {
-    // this.callback = options.callback;
     this.listenTo(OKCupid.CurrentUser, 'signIn', this.signInCallback);
   },
 

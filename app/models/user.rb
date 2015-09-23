@@ -88,6 +88,8 @@ class User < ActiveRecord::Base
         zip_code: '10003',
         country: "United States"
         )
+
+      user.create_profile
     end
 
     user

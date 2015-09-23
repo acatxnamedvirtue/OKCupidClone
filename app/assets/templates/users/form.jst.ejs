@@ -1,0 +1,72 @@
+<h1>Edit Account Info</h1>
+
+<br>
+<form>
+  <label>
+    Username
+    <input
+      type='text'
+      name='user[username]'
+      value='<%= OKCupid.CurrentUser.escape("username") %>'>
+  </label>
+  <br><br>
+  <label>
+    Email
+    <input
+      type='text'
+      name='user[email]'
+      value='<%= OKCupid.CurrentUser.escape('email') %>'>
+  </label>
+  <br><br>
+
+  <label>
+    I am a
+    <select name='user[gender]'>
+      <option <% if(OKCupid.CurrentUser.escape("gender")==="Male") { %><%= "selected" %><% } %> value='Male'>Man</option>
+      <option <% if(OKCupid.CurrentUser.escape("gender")==="Female") { %><%= "selected" %><% } %> value='Female'>Woman</option>
+    </select>
+  </label>
+  <br><br>
+
+  <label>My Birthday</label>
+  <select class='month' name='user[month]'>
+    <% for(var i = 1; i <= 12; i++) { %>
+      <option <% if(OKCupid.CurrentUser.escape("month")==="0" + i || OKCupid.CurrentUser.escape("month")==="" + i) { %><%= "selected" %><% } %> value='<%= OKCupid.MONTH[OKCupid.MONTHS[i]] %>'><%= OKCupid.MONTHS[i] %></option>
+    <% } %>
+  </select>
+  <select class='day' name='user[day]'>
+    <% for(var i = 1; i <= 31 ; i++) { %>
+      <option <% if(OKCupid.CurrentUser.escape("day")=== "0" + i || OKCupid.CurrentUser.escape("day")=== "1" + i || OKCupid.CurrentUser.escape("day")=== "2" + i || OKCupid.CurrentUser.escape("day")=== "" + i) { %><%= "selected" %><% } %> value='<%= i %>'><%= i %></option>
+    <% } %>
+  </select>
+  <select class='year' name='user[year]'>
+    <% for(var i = 1900; i <= 2015; i++) { %>
+      <option <% if(OKCupid.CurrentUser.escape("year")=== "" + i) { %><%= "selected" %><% } %> value='<%= i %>'><%= i %></option>
+    <% } %>
+  </select>
+  <br><br>
+
+  <label>
+    Location
+    <input
+      type='text'
+      name='user[country]'
+      value='<%= OKCupid.CurrentUser.escape("country") %>'>
+
+    <input
+      type='text'
+      name='user[zip_code]'
+      value='<%= OKCupid.CurrentUser.escape("zip_code") %>'>
+  </label>
+  <br><br>
+
+  <label>Sexual Orientation</label>
+    <select name='user[sex_orientation]'>
+      <option <% if(OKCupid.CurrentUser.escape("sex_orientation")==="Straight") { %><%= "selected" %><% } %> value='Straight'>Straight</option>
+      <option <% if(OKCupid.CurrentUser.escape("sex_orientation")==="Gay") { %><%= "selected" %><% } %> value='Gay'>Gay</option>
+      <option <% if(OKCupid.CurrentUser.escape("sex_orientation")==="Bisexual") { %><%= "selected" %><% } %> value='Bisexual'>Bisexual</option>
+    </select>
+  <br><br>
+
+  <button>Save Changes</button>
+</form>

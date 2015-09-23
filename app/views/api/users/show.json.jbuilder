@@ -1,4 +1,4 @@
-json.extract!(@user, :id, :username, :email)
+json.extract!(@user, :id, :username, :email, :sex_orientation, :gender, :country, :zip_code, :month, :day, :year)
 
 json.sent_messages do
   json.array! @user.sent_messages do |msg|

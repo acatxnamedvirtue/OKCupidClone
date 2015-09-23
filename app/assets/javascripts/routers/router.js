@@ -11,7 +11,7 @@ OKCupid.Routers.Router = Backbone.Router.extend({
     'questions/new' : 'questionNew',
     'questions/:id' : 'questionShow',
     'session/new' : 'signIn',
-    'users/new' : 'userNew',
+    'users/:id/edit' : 'userEdit',
     'users/:id' : 'userShow',
     'splash' : 'splashPage'
   },
@@ -102,11 +102,11 @@ OKCupid.Routers.Router = Backbone.Router.extend({
     this._swapView(view);
   },
 
-  userNew: function() {
-    if (!this._requireSignedOut()) { return; }
-
-    var model = new OKCupid.Models.User();
-    var formView = new OKCupid.Views.UsersForm({
+  userEdit: function(id) {
+    // if (!this._requireSignedIn()) { return; }
+    OKCupid.CurrentUser.fetch();
+    var model = OKCupid.CurrentUser;
+    var formView = new OKCupid.Views.UserForm({
       collection: OKCupid.Users,
       model: model
     });
@@ -133,7 +133,7 @@ OKCupid.Routers.Router = Backbone.Router.extend({
       }
       return false;
     }
-    
+
     return true;
   },
 

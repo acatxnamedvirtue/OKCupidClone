@@ -6,3 +6,5 @@ json.extract!(@profile, :id, :self_summary, :what_im_doing, :im_really_good_at,
 json.user do
     json.extract!(@profile.user, :id, :username, :email)
 end
+
+json.profile_pic asset_path(@profile.profile_pic.url)

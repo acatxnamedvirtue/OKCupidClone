@@ -30,4 +30,21 @@ OKCupid.Models.Profile = Backbone.Model.extend({
     this._user = this._user || {};
     return this._user;
   },
+
+  saveFormData: function(formData, options) {
+    var model = this;
+
+    debugger
+
+    $.ajax({
+      url: _ .result(model, "url"),
+      type: "PUT",
+      data: formData,
+      processData: false,
+      contentType: false,
+      success: function() {
+        options.success && options.success();
+      }
+    });
+  }
 });

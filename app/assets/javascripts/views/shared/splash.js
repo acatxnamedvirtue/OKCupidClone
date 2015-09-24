@@ -24,8 +24,8 @@ OKCupid.Views.SplashPage = Backbone.View.extend({
     this.$el.find('.sign-in p').css({"display": "none"});
 
     var attrs = this.$el.find('form.sign-up').serializeJSON();
-    this._sexOrientation = attrs.user.sex_orientation;
-    this._gender = attrs.user.gender;
+    OKCupid._sexOrientation = attrs.user.sex_orientation;
+    OKCupid._gender = attrs.user.gender;
     Backbone.history.navigate('#continue', {trigger: true});
 
     var content = JST['shared/signUp']();
@@ -59,8 +59,8 @@ OKCupid.Views.SplashPage = Backbone.View.extend({
     var $form = $(e.currentTarget);
     var attrs = $form.serializeJSON();
     delete attrs.user.confirmEmail;
-    attrs.user.sex_orientation = this._sexOrientation;
-    attrs.user.gender = this._gender;
+    attrs.user.sex_orientation = OKCupid._sexOrientation;
+    attrs.user.gender = OKCupid._gender;
 
     var that = this;
     var model = new OKCupid.Models.User();
@@ -72,7 +72,6 @@ OKCupid.Views.SplashPage = Backbone.View.extend({
         Backbone.history.navigate('', { trigger: true });
       },
       error: function(data) {
-
       }
     });
   }

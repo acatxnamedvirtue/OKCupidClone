@@ -23,10 +23,10 @@ class Api::ProfilesController < ApplicationController
   end
 
   def profile_params
-    params.require(:profile).permit(:self_summary, :what_im_doing,
+    params.require(:profile).permit(:profile_pic, :self_summary, :what_im_doing,
       :im_really_good_at, :what_im_doing, :im_really_good_at, :favorites,
       :six_things, :friday_night, :message_me_if, :orientation, :ethnicity,
       :height, :body_type, :diet, :smokes, :drinks, :drugs, :religion, :sign,
-      :education, :job, :income, :status, :type, :offspring, :pets, :speaks)
+      :education, :job, :income, :status, :relationship_type, :offspring, :pets, :speaks, :thinking_about)
   end
 end

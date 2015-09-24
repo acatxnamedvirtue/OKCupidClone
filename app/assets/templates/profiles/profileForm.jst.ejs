@@ -1,5 +1,13 @@
 <ul class="errors"></ul>
 <h1><%= user.escape('username') %></h1>
+<form class='profile-pic'>
+  <input type="file" name="profile[profile_pic]" id="input-image">
+  <button class='profile-pic-submit'>Upload Profile Pic</button>
+</form>
+
+
+<label>Profile Pic</label>
+<img src='<%= profile.escape("profile_pic") %>' class='profile-pic'>
 
 <label for='profile_self'>My self-summary<br>
   <input id='profile_self'
@@ -39,7 +47,7 @@
 <label for='profile_thinking'>I spend a lot of time thinking about<br>
   <input id='profile_thinking'
          type='text'
-         name='profile[thinking]'
+         name='profile[thinking_about]'
          value='<%= profile.escape('thinking')%>'><br>
 </label><br>
 
@@ -185,6 +193,6 @@
 
 
 
-<input type="submit">
+<button class='profile-update'>Update Profile</button>
 
 <a href="#/">Back To Index</a>

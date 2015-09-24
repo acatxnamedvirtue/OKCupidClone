@@ -13,7 +13,8 @@ OKCupid.Routers.Router = Backbone.Router.extend({
     'session/new' : 'signIn',
     'users/:id/edit' : 'userEdit',
     'users/:id' : 'userShow',
-    'splash' : 'splashPage'
+    'splash' : 'splashPage',
+    '_=_' : 'profilesIndex'
   },
 
   initialize: function(options) {

@@ -2,7 +2,8 @@ this.OKCupid.Views.ProfileForm = Backbone.CompositeView.extend({
   tagName: 'form',
   template: JST['profiles/profileForm'],
   events: {
-    'submit' : 'submit'
+    'click .profile-pic-submit' : 'submitProfilePic',
+    'click .update-profile' : 'submit'
   },
 
   initialize: function() {
@@ -40,6 +41,20 @@ this.OKCupid.Views.ProfileForm = Backbone.CompositeView.extend({
       wait: true,
       success: success,
       errors: errors.bind(this)
+    });
+  },
+
+  submitProfilePic: function(e) {
+    debugger
+    e.preventDefault();
+    var file = this.$("#input-image")[0].files[0];
+    var formData = new FormData();
+    formData.append('profile[profile_pic]', file);
+    var that = this;
+    this.model.saveFormData(formData, {
+      success: function() {
+        that.render();
+      }
     });
   }
 });

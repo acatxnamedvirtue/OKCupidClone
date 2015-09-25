@@ -45,7 +45,6 @@ this.OKCupid.Views.ProfileForm = Backbone.CompositeView.extend({
   },
 
   submitProfilePic: function(e) {
-    debugger
     e.preventDefault();
     var file = this.$("#input-image")[0].files[0];
     var formData = new FormData();

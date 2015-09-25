@@ -5,7 +5,7 @@ class Api::UsersController < ApplicationController
   end
 
   def show
-    @user = User.includes(:answered_questions, :authored_questions, :sent_messages, :received_messages, :likers, :liked_users, :likes)
+    @user = User.includes(:profile, :answered_questions, :authored_questions, :sent_messages, :received_messages, :likers, :liked_users, :likes)
       .find(params[:id])
   end
 

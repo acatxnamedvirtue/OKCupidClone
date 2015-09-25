@@ -1,12 +1,19 @@
-<% if(OKCupid.CurrentUser.isSignedIn()) { %>
+<% if (OKCupid.CurrentUser.isSignedIn()) { %>
+  <div class='left-side-navbar group'>
+    <h1>OKC</h1>
+    <a href='#/'>Browse Matches</a>
+    <a id='#random' href='#/random'>Random Match</a>
+  </div>
 
-  <p>
-    Signed in as:
-    <a href="#/profiles/<%= OKCupid.CurrentUser.id %>"><%= OKCupid.CurrentUser.escape("username") %></a> |
-    <a href="#" id="sign-out-link">Sign Out</a> |
-    <a href='#/profiles/<%= OKCupid.CurrentUser.id %>/edit'>Edit Your Profile</a>
+  <div class='right-side-navbar group'>
     <a href='#/questions/'>Questions</a>
-    <a href='#/messages/'>Messages</a>
     <a href='#/likes/'>Likes</a>
-  </p>
+    <a href='#/messages/'>Messages</a>
+    <a href='#/profiles/<%= OKCupid.CurrentUser.id %>'>
+      <img
+        src='<%= OKCupid.CurrentUser.profilePic() %>'
+        class='profile_pic_mini'>
+    </a>
+    <a href='#' id='sign-out-link'>Sign Out</a>
+  </div>
 <% } %>

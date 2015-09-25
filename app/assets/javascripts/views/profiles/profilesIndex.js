@@ -9,6 +9,15 @@ OKCupid.Views.ProfilesIndex = Backbone.CompositeView.extend({
     var content = this.template({ profiles: this.collection });
     this.$el.html(content);
 
+    var rows;
+    if(this.collection.length % 3 === 0) {
+      rows = this.collection.length / 3;
+    } else {
+      rows = Math.floor(this.collection.length / 3) + 1;
+    }
+    var total_height = rows * 280;
+    this.$('ul.profiles').css({"height": total_height + "px"});
+
     this.collection.each(function(profile) {
       if(OKCupid.CurrentUser.id === profile.user().id) { return; }
       var indexItem = new OKCupid.Views.ProfilesIndexItem({ model: profile });

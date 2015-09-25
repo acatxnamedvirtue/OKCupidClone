@@ -1,0 +1,35 @@
+#main .profiles-container {
+  display: block;
+  width: 960px;
+  margin: auto;
+  font-family: 'Open Sans',sans-serif;
+  background: #f3f5f9;
+  border-radius: 2px;
+}
+
+#main .profiles {
+  display: block;
+}
+
+#main .profiles > li {
+  display: block;
+  float: left;
+  width: 280px;
+  margin: 20px 18px 0 0;
+  text-align: center;
+  color: #5e6573;
+  font-size: 22px;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+}
+
+#main .profiles > li:hover {
+  box-shadow: 0 0 3px #104DA1;
+}
+
+#main .profiles img {
+  height: 225px;
+  width: 280px;
+  display: block;
+}

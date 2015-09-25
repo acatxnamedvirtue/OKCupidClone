@@ -14,7 +14,8 @@ OKCupid.Routers.Router = Backbone.Router.extend({
     'users/:id/edit' : 'userEdit',
     'users/:id' : 'userShow',
     'splash' : 'splashPage',
-    '_=_' : 'profilesIndex'
+    '_=_' : 'profilesIndex',
+    'random' : 'random'
   },
 
   initialize: function(options) {
@@ -26,6 +27,11 @@ OKCupid.Routers.Router = Backbone.Router.extend({
   splashPage: function() {
     var view = new OKCupid.Views.SplashPage();
     this._swapView(view);
+  },
+
+  random: function() {
+    var id = Math.floor(Math.random() * OKCupid.Profiles.length)
+    Backbone.history.navigate('#/profiles/' + id, { trigger: true })
   },
 
   profileShow: function(id) {

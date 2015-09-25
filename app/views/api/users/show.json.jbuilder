@@ -45,3 +45,5 @@ json.authored_questions do
     json.extract!(question, :id, :author_id, :title, :body)
   end
 end
+
+json.profile_pic asset_path(@user.profile.profile_pic.url)

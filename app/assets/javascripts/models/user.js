@@ -2,6 +2,11 @@ OKCupid.Models.User = Backbone.Model.extend({
   urlRoot: '/api/users',
 
   parse: function(response) {
+    if(response.profile_pic) {
+      this._profilePic = response.profile_pic;
+      delete response.profile_pic;
+    }
+
     if(response.sent_messages) {
       this.sentMessages().set(response.sent_messages, {parse: true});
       delete response.sent_messages;
@@ -97,6 +102,11 @@ OKCupid.Models.User = Backbone.Model.extend({
   authoredQuestions: function() {
     this._authoredQuestions = this._authoredQuestions || new OKCupid.Collections.Questions();
     return this._authoredQuestions;
+  },
+
+  profilePic: function() {
+    this._profilePic = this._profilePic || 'missing.png'
+    return this._profilePic;
   }
 });
 

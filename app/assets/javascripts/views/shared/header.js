@@ -2,6 +2,7 @@ OKCupid.Views.Header = Backbone.View.extend({
   initialize: function(options) {
     this.listenTo(OKCupid.CurrentUser, 'signIn signOut', this.render);
     this.render();
+    this.listenTo(OKCupid.CurrentUser, 'sync', this.render);
   },
 
   events: {

@@ -4,7 +4,7 @@ json.extract!(@profile, :id, :self_summary, :what_im_doing, :im_really_good_at,
   :job, :income, :status, :relationship_type, :offspring, :pets, :speaks, :thinking_about)
 
 json.user do
-    json.extract!(@profile.user, :id, :username, :email)
+    json.extract!(@profile.user, :id, :username, :email, :country, :zip_code, :year, :gender)
 end
 
 json.profile_pic asset_path(@profile.profile_pic.url)

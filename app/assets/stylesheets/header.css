@@ -1,0 +1,59 @@
+#header {
+  height: 65px;
+  font-family: 'Open Sans',sans-serif;
+  border-bottom: 1px solid #275EAA;
+  color: #d6e1f9;
+}
+
+#header .left-side-navbar {
+  float: left;
+  display: block;
+}
+
+#header .right-side-navbar {
+  float: right;
+  font-size: 16px;
+}
+
+#header .left-side-navbar > h1, #header .left-side-navbar > a {
+  float: left;
+  display: block;
+  font-size: 16px;
+  margin: 21px 20px;
+}
+
+#header a:hover {
+  color: #fff;
+}
+
+#header .right-side-navbar > a {
+  float: left;
+  display: block;
+  margin: 21px 20px;
+}
+
+#header .profile_pic_mini {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  display: block;
+  margin: -7px auto;
+}
+
+#header #sign-out-link {
+  display: block;
+  text-align: center;
+  background: #30b7c4;
+  cursor: pointer;
+  color: #fff;
+  transition: background 200ms;
+  padding: 11.5px 13.25px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+#header #sign-out-link:hover {
+  background: #4FC5D0;
+}

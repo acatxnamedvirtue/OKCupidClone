@@ -1,122 +1,137 @@
-<h1><%= user.username %> </h1>
+<div class='profile-container group'>
+  <div class='profile-header group'>
+    <img src='<%= profile.escape("profile_pic") %>' class='profile-pic'>
+    <div class='profile-user-info'>
+      <h1><%= user.username %></h1>
+      <h2><%= 2015 - user.year %> * <%= user.country %>, <%= user.zip_code %> * <%= user.gender %></h2>
+    </div>
 
-<% if(!(profile.user().id === OKCupid.CurrentUser.id)) { %>
-  <% if (profile.alreadyLiked()) { %>
-    <button class='like'>Unlike!</button>
-  <% } else { %>
-    <button class='like'>Like!</button>
-  <% } %>
-<% } %>
+    <% if(!(profile.user().id === OKCupid.CurrentUser.id)) { %>
+      <% if (profile.alreadyLiked()) { %>
+        <button class='like'>Unlike!</button>
+      <% } else { %>
+        <button class='like'>Like!</button>
+      <% } %>
+    <% } %>
+  </div>
 
-<label>Profile Pic</label>
-<img src='<%= profile.escape("profile_pic") %>' class='profile-pic'>
+  <div class='profile-info-section'>
+    <h2 for='profile_self'>My self-summary</h2>
+    <p><%= profile.escape('self_summary')%></p>
 
-<label for='profile_self'>My self-summary<br>
-  <%= profile.escape('self_summary')%><br>
-</label><br>
+    <h2 for='profile_doing'>What I'm doing with my life</h2>
+    <p><%= profile.escape('what_im_doing')%></p>
 
-<label for='profile_doing'>What I'm doing with my life<br>
-  <%= profile.escape('what_im_doing')%><br>
-</label><br>
+    <h2 for='profile_really_good_at'>I'm really good at</h2>
+    <p><%= profile.escape('im_really_good_at')%></p>
 
-<label for='profile_really_good_at'>I'm really good at<br>
-  <%= profile.escape('im_really_good_at')%><br>
-</label><br>
+    <h2 for='profile_favorites'>Favorite books, movies, shows, music, and food</h2>
+    <p><%= profile.escape('favorites')%></p>
 
-<label for='profile_favorites'>Favorite books, movies, shows, music, and food<br>
-  <%= profile.escape('favorites')%><br>
-</label><br>
+    <h2 for='profile_six_things'>The six things I could never do without</h2>
+    <p><%= profile.escape('six_things')%></p>
 
-<label for='profile_six_things'>The six things I could never do without<br>
-  <%= profile.escape('six_things')%><br>
-</label><br>
+    <h2 for='profile_thinking'>I spend a lot of time thinking about</h2>
+    <p><%= profile.escape('thinking')%></p>
 
-<label for='profile_thinking'>I spend a lot of time thinking about<br>
-  <%= profile.escape('thinking')%><br>
-</label><br>
+    <h2 for='profile_friday_night'>On a typical Friday night I am</h2>
+    <p><%= profile.escape('friday_night')%></p>
 
-<label for='profile_friday_night'>On a typical Friday night I am<br>
-  <%= profile.escape('friday_night')%><br>
-</label><br>
+    <h2 for='profile_message_me_if'>You should message me if</h2>
+    <p><%= profile.escape('message_me_if')%></p>
+  </div>
 
-<label for='profile_message_me_if'>You should message me if<br>
-  <%= profile.escape('message_me_if')%><br>
-</label><br>
+  <div class='profile-stats-section'>
+    <h1>My Details</h1>
 
-<label for='profile_orientation'>Orientation<br>
-  <%= profile.escape('orientation')%><br>
-</label><br>
+    <div class='profile-info-item group'>
+      <h2 for='profile_orientation'>Orientation</h2>
+      <p><%= profile.escape('orientation')%></p>
+    </div>
 
-<label for='profile_ethnicity'>Ethnicity<br>
-  <%= profile.escape('ethnicity')%><br>
-</label><br>
+    <div class='profile-info-item group'>
+      <h2 for='profile_ethnicity'>Ethnicity</h2>
+      <p><%= profile.escape('ethnicity')%></p>
+    </div>
 
-<label for='profile_height'>Height<br>
-  <%= profile.escape('height')%><br>
-</label><br>
+    <div class='profile-info-item group'>
+      <h2 for='profile_height'>Height</h2>
+      <p><%= profile.escape('height')%></p>
+    </div>
 
-<label for='profile_body_type'>Body Type<br>
-  <%= profile.escape('body_type')%><br>
-</label><br>
+    <div class='profile-info-item group'>
+      <h2 for='profile_body_type'>Body Type</h2>
+      <p><%= profile.escape('body_type')%></p>
+    </div>
 
-<label for='profile_diet'>Diet<br>
-  <%= profile.escape('diet')%><br>
-</label><br>
+    <div class='profile-info-item group'>
+      <h2 for='profile_diet'>Diet</h2>
+      <p><%= profile.escape('diet')%></p>
+    </div>
 
-<label for='profile_smokes'>Smokes<br>
-  <%= profile.escape('smokes')%><br>
-</label><br>
+    <div class='profile-info-item group'>
+      <h2 for='profile_smokes'>Smokes</h2>
+      <p><%= profile.escape('smokes')%></p>
+    </div>
 
-<label for='profile_drinks'>Drinks<br>
-  <%= profile.escape('drinks')%><br>
-</label><br>
+    <div class='profile-info-item group'>
+      <h2 for='profile_drinks'>Drinks</h2>
+      <p><%= profile.escape('drinks')%></p>
+    </div>
 
-<label for='profile_drugs'>Drugs<br>
-  <%= profile.escape('drugs')%><br>
-</label><br>
+    <div class='profile-info-item group'>
+      <h2 for='profile_drugs'>Drugs</h2>
+      <p><%= profile.escape('drugs')%></p>
+    </div>
 
-<label for='profile_religion'>Religion<br>
-  <%= profile.escape('religion')%><br>
-</label><br>
+    <div class='profile-info-item group'>
+      <h2 for='profile_religion'>Religion</h2>
+      <p><%= profile.escape('religion')%></p>
+    </div>
 
-<label for='profile_sign'>Sign<br>
-  <%= profile.escape('sign')%><br>
-</label><br>
+    <div class='profile-info-item group'>
+      <h2 for='profile_sign'>Sign</h2>
+      <p><%= profile.escape('sign')%></p>
+    </div>
 
-<label for='profile_education'>Education<br>
-  <%= profile.escape('education')%><br>
-</label><br>
+    <div class='profile-info-item group'>
+      <h2 for='profile_education'>Education</h2>
+      <p><%= profile.escape('education')%></p>
+    </div>
 
-<label for='profile_job'>Job<br>
-  <%= profile.escape('job')%><br>
-</label><br>
+    <div class='profile-info-item group'>
+      <h2 for='profile_job'>Job</h2>
+      <p><%= profile.escape('job')%></p>
+    </div>
 
-<label for='profile_income'>Income<br>
-  <%= profile.escape('income')%><br>
-</label><br>
+    <div class='profile-info-item group'>
+      <h2 for='profile_income'>Income</h2>
+      <p><%= profile.escape('income')%></p>
+    </div>
 
-<label for='profile_status'>Status<br>
-  <%= profile.escape('status')%><br>
-</label><br>
+    <div class='profile-info-item group'>
+      <h2 for='profile_status'>Status</h2>
+      <p><%= profile.escape('status')%></p>
+    </div>
 
-<label for='profile_relationship_type'>Relationship Type<br>
-  <%= profile.escape('relationship_type')%><br>
-</label><br>
+    <div class='profile-info-item group'>
+      <h2 for='profile_relationship_type'>Relationship Type</h2>
+      <p><%= profile.escape('relationship_type')%></p>
+    </div>
 
-<label for='profile_offspring'>Offspring<br>
-  <%= profile.escape('offspring')%><br>
-</label><br>
+    <div class='profile-info-item group'>
+      <h2 for='profile_offspring'>Offspring</h2>
+      <p><%= profile.escape('offspring')%></p>
+    </div>
 
-<label for='profile_pets'>Pets<br>
-  <%= profile.escape('pets')%><br>
-</label><br>
+    <div class='profile-info-item group'>
+      <h2 for='profile_pets'>Pets</h2>
+      <p><%= profile.escape('pets')%></p>
+    </div>
 
-<label for='profile_speaks'>Speaks<br>
-  <%= profile.escape('speaks')%><br>
-</label><br>
-
-
-
-<input type="submit">
-
-<a href="#/">Back To Index</a>
+    <div class='profile-info-item group'>
+      <h2 for='profile_speaks'>Speaks</h2>
+      <p><%= profile.escape('speaks')%></p>
+    </div>
+  </div>
+</div>

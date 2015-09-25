@@ -7,4 +7,6 @@ json.array!(@profiles) do |profile|
   json.user do
       json.extract!(profile.user, :id, :username, :email)
   end
+
+  json.profile_pic asset_path(profile.profile_pic.url)
 end

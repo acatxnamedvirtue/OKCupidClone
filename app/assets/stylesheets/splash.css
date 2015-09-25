@@ -94,7 +94,7 @@
 
 .modalDialog button {
   text-align: center;
-  vertical-align: center;
+  vertical-align: middle;
   display: block;
   background: #3260c7;
   color: #fff;
@@ -102,9 +102,24 @@
   width: 215px;
   height: 50px;
   cursor: pointer;
+  border-radius: 2px;
 }
 
-.modalDialog button:hover {
+.modalDialog .facebook {
+  display: block;
+  width: 215px;
+  padding: 15px 0;
+  color: #fff;
+  margin: 0 auto;
+  cursor: pointer;
+  background: #3260c7;
+  text-align: center;
+  vertical-align: middle;
+  border-radius: 2px;
+}
+
+
+.modalDialog button:hover, .modalDialog .facebook:hover {
   background: #1F57A3;
   transition: background 200ms;
 }
@@ -132,7 +147,7 @@
 
 .modalDialog > div {
   width: 300px;
-  height: 450px;
+  height: 460px;
 	position: relative;
 	margin: 10% auto;
 	padding: 5px 20px 13px 20px;

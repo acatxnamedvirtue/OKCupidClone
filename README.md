@@ -1,21 +1,21 @@
-# TBD
+# OKClone
 
 [Heroku link][heroku]
 
-[heroku]: TBD
+[heroku]: https://glacial-bastion-8978.herokuapp.com
 
 ## Minimum Viable Product
-TBD is a clone of OKCupid built on Rails and Backbone. Users can:
+OKClone is a clone of OKCupid built on Rails and Backbone. Users can:
 
 
-- [ ] Create accounts
-- [ ] Create sessions (log in)
-- [ ] Create profiles
-- [ ] Create questions/question_choices
-- [ ] Create messages (send)
-- [ ] View profiles and messages
-- [ ] Like Profiles
-- [ ] View a index of profiles
+- [x] Create accounts
+- [x] Create sessions (log in)
+- [x] Create profiles
+- [x] Create questions/question_choices
+- [x] Create messages (send)
+- [x] View profiles and messages
+- [x] Like Profiles
+- [x] View a index of profiles
 - [ ] Search for profiles by username
 - [ ] Search for profiles by age/orientation/body-type/gender/etc
 
@@ -56,14 +56,10 @@ criteria that they specify such as age-range, gender, orientation, religion, etc
 [Details][phase-five]
 
 ### Bonus Features (TBD)
-- [ ] "Like" button and counter for posts
-- [ ] Custom blog urls
 - [ ] Pagination/infinite scroll
+- [ ] Login via Facebook OAuth integration
 - [ ] Activity history (e.g. likes, reblogs, taggings)
-- [ ] Post types (image posts, quote posts, etc)
-- [ ] Reblogging
-- [ ] Multiple sessions/session management
-- [ ] User avatars
+- [x] User avatars
 - [ ] Typeahead search bar
 
 [phase-one]: ./docs/phases/phase1.md

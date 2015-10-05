@@ -1,10 +1,5 @@
 class Question < ActiveRecord::Base
-  validates :author_id, :title, :body, presence: true
-
-  belongs_to :author,
-  class_name: 'User',
-  foreign_key: :author_id,
-  primary_key: :id
+  validates :title, presence: true
 
   has_many :question_choices,
   class_name: 'QuestionChoice',

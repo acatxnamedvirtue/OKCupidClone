@@ -1,10 +1,5 @@
 class QuestionChoice < ActiveRecord::Base
-  validates :author_id, :question_id, :body, presence: true
-
-  belongs_to :author,
-  class_name: 'User',
-  foreign_key: :author_id,
-  primary_key: :id
+  validates :question_id, :body, presence: true
 
   belongs_to :question,
   class_name: 'Question',

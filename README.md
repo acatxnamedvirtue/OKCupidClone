@@ -57,7 +57,7 @@ criteria that they specify such as age-range, gender, orientation, religion, etc
 
 ### Bonus Features (TBD)
 - [ ] Pagination/infinite scroll
-- [ ] Login via Facebook OAuth integration
+- [x] Login via Facebook OAuth integration
 - [ ] Activity history (e.g. likes, reblogs, taggings)
 - [x] User avatars
 - [ ] Typeahead search bar

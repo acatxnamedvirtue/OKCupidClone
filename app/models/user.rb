@@ -6,42 +6,37 @@ class User < ActiveRecord::Base
 
   before_validation :ensure_session_token
 
-  has_many :authored_questions,
-  class_name: 'Question',
-  foreign_key: :author_id,
-  primary_key: :id
-
   has_many :answered_questions,
   through: :question_answers,
   source: :question
 
-  has_many :authored_question_choices,
-  class_name: 'QuestionChoice',
-  foreign_key: :author_id,
-  primary_key: :id
-
   has_many :question_answers,
+  dependent: :destroy,
   class_name: 'QuestionAnswer',
   foreign_key: :user_id,
   primary_key: :id
 
   has_one :profile,
+  dependent: :destroy,
   class_name: 'Profile',
   foreign_key: :user_id,
   primary_key: :id
 
   has_many :sent_messages,
+  dependent: :destroy,
   class_name: 'Message',
   foreign_key: :sender_id,
   primary_key: :id
 
   has_many :received_messages,
+  dependent: :destroy,
   class_name: 'Message',
   foreign_key: :recipient_id,
   primary_key: :id
 
   # like instances where the current user is the liker
   has_many :likes,
+  dependent: :destroy,
   class_name: 'Like',
   foreign_key: :liker_id,
   primary_key: :id

@@ -8,13 +8,13 @@
 password = BCrypt::Password.create("123456")
 
 users = User.create([
-  { username: 'Chad', email: 'chad@nyu.edu', password_digest: BCrypt::Password.create('123456'), month: '03', day: '23', year: '1989', sex_orientation: 'Gay', gender: 'Female', country: 'United States', zip_code: '32303' },
-  { username: 'Tyler', email: 'tyler@aa.io', password_digest: BCrypt::Password.create('123456'), month: '03', day: '23', year: '1989', sex_orientation: 'Gay', gender: 'Female', country: 'United States', zip_code: '32303' },
-  { username: 'Trish', email: 'trish@nyu.edu', password_digest: BCrypt::Password.create('123456'), month: '03', day: '23', year: '1989', sex_orientation: 'Gay', gender: 'Female', country: 'United States', zip_code: '32303' },
-  { username: 'Adam', email: 'adam@aa.io', password_digest: BCrypt::Password.create('123456'), month: '03', day: '23', year: '1989', sex_orientation: 'Gay', gender: 'Female', country: 'United States', zip_code: '32303' },
-  { username: 'Lexi', email: 'lexi@gmail.com', password_digest: BCrypt::Password.create('123456'), month: '03', day: '23', year: '1989', sex_orientation: 'Gay', gender: 'Female', country: 'United States', zip_code: '32303' },
-  { username: 'Hannah', email: 'hannah@gmail.com', password_digest: BCrypt::Password.create('123456'), month: '03', day: '23', year: '1989', sex_orientation: 'Gay', gender: 'Female', country: 'United States', zip_code: '32303' },
-  { username: 'Liz', email: 'liz@gmail.com', password_digest: BCrypt::Password.create('123456'), month: '03', day: '23', year: '1989', sex_orientation: 'Gay', gender: 'Female', country: 'United States', zip_code: '32303' },
+  { username: 'Chad', email: 'chad@nyu.edu', password_digest: BCrypt::Password.create('123456'), month: '09', day: '16', year: '1990', sex_orientation: 'Straight', gender: 'Male', country: 'United States', zip_code: '11206' },
+  { username: 'Tyler', email: 'tyler@aa.io', password_digest: BCrypt::Password.create('123456'), month: '03', day: '23', year: '1989', sex_orientation: 'Bisexual', gender: 'Female', country: 'United States', zip_code: '11206' },
+  { username: 'Trish', email: 'trish@nyu.edu', password_digest: BCrypt::Password.create('123456'), month: '08', day: '24', year: '1989', sex_orientation: 'Straight', gender: 'Female', country: 'United States', zip_code: '11206' },
+  { username: 'Adam', email: 'adam@aa.io', password_digest: BCrypt::Password.create('123456'), month: '05', day: '14', year: '1989', sex_orientation: 'Straight', gender: 'Male', country: 'United States', zip_code: '11206' },
+  { username: 'Lexi', email: 'lexi@gmail.com', password_digest: BCrypt::Password.create('123456'), month: '02', day: '05', year: '1991', sex_orientation: 'Straight', gender: 'Female', country: 'United States', zip_code: '11206' },
+  { username: 'Hannah', email: 'hannah@gmail.com', password_digest: BCrypt::Password.create('123456'), month: '06', day: '21', year: '1990', sex_orientation: 'Bisexual', gender: 'Female', country: 'United States', zip_code: '11206' },
+  { username: 'Liz', email: 'liz@gmail.com', password_digest: BCrypt::Password.create('123456'), month: '02', day: '15', year: '1989', sex_orientation: 'Bisexual', gender: 'Female', country: 'United States', zip_code: '32303' },
   { username: 'Austin', email: 'austin@embryriddle.edu', password_digest: BCrypt::Password.create('123456'), month: '03', day: '23', year: '1989', sex_orientation: 'Gay', gender: 'Female', country: 'United States', zip_code: '32303' },
   { username: 'Logan', email: 'logan@whoknows.com', password_digest: BCrypt::Password.create('123456'), month: '03', day: '23', year: '1989', sex_orientation: 'Gay', gender: 'Female', country: 'United States', zip_code: '32303' },
   { username: 'Carl', email: 'carl@aa.io', password_digest: BCrypt::Password.create('123456'), month: '03', day: '23', year: '1989', sex_orientation: 'Gay', gender: 'Female', country: 'United States', zip_code: '32303' },
@@ -27,22 +27,22 @@ users = User.create([
   ])
 
 profiles = Profile.create([
-  { user_id: User.all[0].id },
-  { user_id: User.all[1].id },
-  { user_id: User.all[2].id },
-  { user_id: User.all[3].id },
-  { user_id: User.all[4].id },
-  { user_id: User.all[5].id },
-  { user_id: User.all[6].id },
-  { user_id: User.all[7].id },
-  { user_id: User.all[8].id },
-  { user_id: User.all[9].id },
-  { user_id: User.all[10].id },
-  { user_id: User.all[11].id },
-  { user_id: User.all[12].id },
-  { user_id: User.all[13].id },
-  { user_id: User.all[14].id },
-  { user_id: User.all[15].id }
+  { user_id: User.all[0].id, profile_pic: File.new(Rails.root.join("app", "assets", "images","Chad.jpg")) },
+  { user_id: User.all[1].id, profile_pic: File.new(Rails.root.join("app", "assets", "images","Tyler.jpg")) },
+  { user_id: User.all[2].id, profile_pic: File.new(Rails.root.join("app", "assets", "images","Trish.jpg")) },
+  { user_id: User.all[3].id, profile_pic: File.new(Rails.root.join("app", "assets", "images","Adam.jpg")) },
+  { user_id: User.all[4].id, profile_pic: File.new(Rails.root.join("app", "assets", "images","Lexi.jpg")) },
+  { user_id: User.all[5].id, profile_pic: File.new(Rails.root.join("app", "assets", "images","Hannah.jpg")) },
+  { user_id: User.all[6].id, profile_pic: File.new(Rails.root.join("app", "assets", "images","Liz.jpg")) },
+  { user_id: User.all[7].id, profile_pic: File.new(Rails.root.join("app", "assets", "images","Austin.jpg")) },
+  { user_id: User.all[8].id, profile_pic: File.new(Rails.root.join("app", "assets", "images","Logan.jpg")) },
+  { user_id: User.all[9].id, profile_pic: File.new(Rails.root.join("app", "assets", "images","Carl.jpg")) },
+  { user_id: User.all[10].id, profile_pic: File.new(Rails.root.join("app", "assets", "images","Conz.jpg")) },
+  { user_id: User.all[11].id, profile_pic: File.new(Rails.root.join("app", "assets", "images","Jonathan.jpg")) },
+  { user_id: User.all[12].id, profile_pic: File.new(Rails.root.join("app", "assets", "images","Tommy.jpg")) },
+  { user_id: User.all[13].id, profile_pic: File.new(Rails.root.join("app", "assets", "images","Ariel.jpg")) },
+  { user_id: User.all[14].id, profile_pic: File.new(Rails.root.join("app", "assets", "images","Chris.jpg")) },
+  { user_id: User.all[15].id, profile_pic: File.new(Rails.root.join("app", "assets", "images","Erika.jpg")) }
   ])
 
 likes = Like.create([

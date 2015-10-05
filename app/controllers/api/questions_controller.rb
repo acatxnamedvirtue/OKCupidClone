@@ -5,7 +5,7 @@ class Api::QuestionsController < ApplicationController
   end
 
   def show
-    @question = Question.includes(:author, :question_choices, :question_answers).find(params[:id])
+    @question = Question.includes(:question_choices, :question_answers).find(params[:id])
   end
 
   def create

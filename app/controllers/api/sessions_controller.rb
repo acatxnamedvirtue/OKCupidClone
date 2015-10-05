@@ -1,7 +1,7 @@
 class Api::SessionsController < ApplicationController
   def show
     if current_user
-      @user = User.includes(:profile, :answered_questions, :authored_questions, :sent_messages, :received_messages, :likers, :liked_users, :likes)
+      @user = User.includes(:profile, :answered_questions, :sent_messages, :received_messages, :likers, :liked_users, :likes)
         .find(current_user.id)
       render :show
     else

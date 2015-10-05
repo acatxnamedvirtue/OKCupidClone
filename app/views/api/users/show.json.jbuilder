@@ -36,13 +36,7 @@ end
 
 json.answered_questions do
   json.array! @user.answered_questions do |question|
-    json.extract!(question, :id, :author_id, :title, :body)
-  end
-end
-
-json.authored_questions do
-  json.array! @user.authored_questions do |question|
-    json.extract!(question, :id, :author_id, :title, :body)
+    json.extract!(question, :id, :title)
   end
 end
 

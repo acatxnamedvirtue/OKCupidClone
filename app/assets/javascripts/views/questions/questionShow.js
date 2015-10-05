@@ -28,8 +28,6 @@ OKCupid.Views.QuestionShow = Backbone.CompositeView.extend({
     attrs.question_answer.user_id = OKCupid.CurrentUser.id
     var that = this;
 
-    debugger
-
     var success = function() {
       OKCupid.CurrentUser.answeredQuestions().add(this.model);
       Backbone.history.navigate('#/questions/', {trigger: true});

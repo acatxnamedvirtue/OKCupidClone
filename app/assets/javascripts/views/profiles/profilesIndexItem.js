@@ -7,8 +7,8 @@ OKCupid.Views.ProfilesIndexItem = Backbone.CompositeView.extend({
   },
 
   render: function() {
-    var username = this.model.user().username
-    var content = this.template({ profile: this.model, username: username });
+    var user = this.model.user()
+    var content = this.template({ profile: this.model, user: user });
     this.$el.html(content);
 
     return this;

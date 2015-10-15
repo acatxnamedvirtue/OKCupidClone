@@ -12,6 +12,8 @@
       <% } else { %>
         <button class='like'>Like!</button>
       <% } %>
+    <% } else { %>
+      <button class='edit'><a href='/#/profiles/<%= OKCupid.CurrentUser.id %>/edit'>Edit Profile</a></button>
     <% } %>
   </div>
 

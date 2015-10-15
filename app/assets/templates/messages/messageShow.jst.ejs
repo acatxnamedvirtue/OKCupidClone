@@ -1,21 +1,22 @@
-<h1>Message</h1>
+<div class='message-show-container'>
+  <br>
+  <label for='message_sender'>From:<br>
+    <img src='<%= sender.profile_pic %>'>
+    <h1><%= sender.username %></h1><br>
+  </label>
 
-<label for='message_sender'>From:<br>
-  <%= sender.username %><br>
-</label><br>
+  <label for='message_recipient'>To:<br>
+    <img src='<%= recipient.profile_pic %>'>
+    <h1><%= recipient.username %></h1><br>
+  </label>
 
-<label for='message_recipient'>To:<br>
-  <%= recipient.username %><br>
-</label><br>
+  <label for='message_title'>Title:<br>
+    <h1><%= message.escape('title')%></h1><br>
+  </label>
 
-<label for='message_title'>Title:<br>
-  <%= message.escape('title')%><br>
-</label><br>
+  <label for='message_body'>Body:<br>
+    <h1><%= message.escape('body')%></h1><br>
+  </label>
 
-<label for='message_body'>Body:<br>
-  <%= message.escape('body')%><br>
-</label><br>
-
-<input type="submit">
-
-<a href="#/messages/">Back To Messages</a>
+  <h1><a href="#/messages/">Back To Messages</a></h1>
+<div>

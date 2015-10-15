@@ -18,7 +18,8 @@ end
 
 json.likers do
   json.array! @user.likers do |liker|
-    json.extract!(liker, :id, :username, :email)
+    json.extract!(liker, :id, :username, :email, :gender, :year)
+    json.profile_pic asset_path(liker.profile.profile_pic.url)
   end
 end
 
@@ -31,6 +32,7 @@ end
 json.liked_users do
   json.array! @user.liked_users do |liked_user|
     json.extract!(liked_user, :id, :username, :email)
+    json.profile_pic asset_path(liked_user.profile.profile_pic.url)
   end
 end
 

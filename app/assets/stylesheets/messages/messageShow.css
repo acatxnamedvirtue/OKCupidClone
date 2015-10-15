@@ -1,0 +1,22 @@
+#main .message-show-container {
+  display: block;
+  width: 500px;
+  height: 675px;
+  margin: auto;
+  font-family: 'Open Sans',sans-serif;
+  background: #f3f5f9;
+  border-radius: 2px;
+  color: #474D59;
+}
+
+#main .message-show-container h1, #main .message-show-container label {
+  margin: 0 10px 10px 20px;
+  font-size: 20px;
+}
+
+#main .message-show-container img {
+  width: 100px;
+  height: 100px;
+  margin: 10px 20px;
+  border-radius: 50%;
+}

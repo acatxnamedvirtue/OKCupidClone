@@ -1,1 +1,2 @@
-<a href='#/profiles/<%= user.id %>'><%= user.get('username') %></a>
+<a href='#/profiles/<%= user.id %>'><img src='<%= user.profilePic() %>'></a>
+<a href='#/profiles/<%= user.id %>'><%= user.escape('username') %> * <%= 2015-user.escape('year') %> * <%= user.escape('gender') %></a>

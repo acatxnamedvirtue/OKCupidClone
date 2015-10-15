@@ -1,0 +1,131 @@
+#main .edit-profile-container {
+  width: 960px;
+  margin: auto;
+  height: 1870px;
+  display: block;
+  font-family: 'Open Sans',sans-serif;
+  background: #f3f5f9;
+  border-radius: 2px;
+}
+
+#main .edit-profile-container .edit-profile-header {
+  position: relative;
+  height: 300px;
+  border-bottom: 1px solid #ccc;
+}
+
+#main .edit-profile-container img {
+  height: 225px;
+  width: 280px;
+  border-radius: 2px;
+  float: left;
+  margin: 40px 0 0 40px;
+}
+
+#main .edit-profile-container .edit-profile-user-info {
+  float: left;
+  margin: 150px 20px 0 20px;
+}
+
+#main .edit-profile-container h1 {
+  color: #474D59;
+  font-size: 32px;
+  font-weight: 300;
+}
+
+#main .edit-profile-container h2 {
+  margin: 10px 0 0 0;
+  color: #949AA6;
+  font-size: 16px;
+  font-weight: 300;
+}
+
+#main .edit-profile-container button.profile-pic-submit {
+  float: right;
+  margin: 40px 20px;
+  color: #fff;
+  background: #323741;
+  width: 190px;
+  text-align: center;
+  padding: 14px 0;
+  border-radius: 2px;
+  overflow: hidden;
+  transition: background 200ms;
+}
+
+#main .edit-profile-container #input-image {
+  position: absolute;
+  right: 0px;
+  top: 10px;
+  width: 100px;
+}
+
+#main .edit-profile-container button:hover {
+  background: #3D444F;
+}
+
+#main .edit-profile-info-section {
+  float: left;
+}
+
+
+#main .edit-profile-info-section label {
+  color: #474d59;
+  font-size: 18px;
+  font-weight: 700;
+  margin: 20px 20px 0 20px;
+}
+
+#main .edit-profile-info-section textarea {
+  color: #5e6573;
+  font-size: 16px;
+  margin: 10px 20px 20px 20px;
+  width: 500px;
+  height: 100px;
+}
+
+#main .edit-profile-stats-section {
+  float: right;
+  margin: 0 20px 0 0;
+  width: 300px;
+}
+
+#main .edit-profile-stats-section h1 {
+  display: block;
+  color: #474D59;
+  font-size: 18px;
+  font-weight: 700;
+  border-bottom: 1px solid #949aa6;
+  padding: 10px 0;
+}
+
+#main .edit-profile-stats-section div {
+  border-bottom: 1px solid #949aa6;
+  margin: 20px;
+}
+
+#main .edit-profile-stats-section label {
+  display: block;
+  color: #949aa6;
+  font-size: 13px;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/*#main .edit-profile-stats-section input {
+  color: #5e6573;
+  font-size: 13px;
+  text-align: right;
+}*/
+
+#main .edit-profile-container button.update-profile {
+  margin: 0px 20px 20px 20px;
+  color: #fff;
+  background: #323741;
+  width: 190px;
+  text-align: center;
+  padding: 14px 0;
+  border-radius: 2px;
+  overflow: hidden;
+  transition: background 200ms;
+}

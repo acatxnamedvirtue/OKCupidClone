@@ -11,7 +11,7 @@ this.OKCupid.Views.ProfileForm = Backbone.CompositeView.extend({
   },
 
   render: function() {
-    var user = OKCupid.Users.getOrFetch(this.model.get('user_id'));
+    var user = this.model.user();
     var content = this.template({ profile: this.model, user: user });
     this.$el.html(content);
 

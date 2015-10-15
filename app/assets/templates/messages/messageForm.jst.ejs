@@ -1,36 +1,32 @@
-<ul class="errors"></ul>
-<h1>Message</h1>
+<div class='message-form-container'>
+  <ul class="errors"></ul>
+  <br>
+  <h1>New Message</h1>
 
-<label for='message_sender'>From:<br>
-  <%= sender.escape('username') %><br>
-</label><br>
+  <label for='message_recipient_drop_down'>To:<br>
+    <select name='message[recipient_id]'>
+      <% OKCupid.Users.each(function(user) { %>
+        <% if(user.id !== OKCupid.CurrentUser.id) { %>
+          <option value='<%= user.id %>'>
+            <%= user.escape('username') %>
+          </option>
+          <% } %>
+      <% }) %>
+    </select><br>
+  </label><br>
 
-<label for='message_recipient_drop_down'>To:<br>
-  <select name='message[recipient_id]'>
-    <% OKCupid.Users.each(function(user) { %>
-      <% if(user.id !== OKCupid.CurrentUser.id) { %>
-        <option value='<%= user.id %>'>
-          <%= user.escape('username') %>
-        </option>
-        <% } %>
-    <% }) %>
-  </select><br>
-</label><br>
+  <label for='message_title'>Subject:<br>
+    <input id='message_title'
+           type='text'
+           name='message[title]'
+           value="<%= message.escape('title')%>"><br>
+  </label><br>
 
-<label for='message_title'>Title:<br>
-  <input id='message_title'
-         type='text'
-         name='message[title]'
-         value="<%= message.escape('title')%>"><br>
-</label><br>
+  <label for='message_body'>Body:<br>
+    <textarea id='message_body' name='message[body]'></textarea><br>
+  </label><br>
 
-<label for='message_body'>Body:<br>
-  <input id='message_body'
-         type='text'
-         name='message[body]'
-         value="<%= message.escape('body')%>"><br>
-</label><br>
-
-<input type="submit">
-
-<a href="#/messages/">Back To Messages</a>
+  <input type="submit">
+  <br>
+  <h1><a href="#/messages/">Back To Messages</a></h1>
+</div>

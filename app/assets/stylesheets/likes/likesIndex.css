@@ -1,0 +1,55 @@
+#main .likes-container {
+  display: block;
+  width: 960px;
+  height: 3000px;
+  margin: auto;
+  font-family: 'Open Sans',sans-serif;
+  background: #f3f5f9;
+  border-radius: 2px;
+}
+
+#main .likes-container {
+  display: block;
+}
+
+#main .likes-container div.likers {
+  display: block;
+}
+
+#main .likes-container div.liked-users {
+  display: block;
+}
+
+#main .likes-container h2 {
+  color: #474D59;
+  font-size: 32px;
+  font-weight: 300;
+  margin: 0 0 20px 20px;
+}
+
+#main .liked-users h2 {
+  margin: 20px 0 20px 20px;
+}
+
+#main .likes-container li {
+  display: block;
+  float: left;
+  width: 280px;
+  margin: 20px 18px 0 0;
+  text-align: center;
+  color: #5e6573;
+  font-size: 22px;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+}
+
+#main .likes-container li:hover {
+  box-shadow: 0 0 3px #104DA1;
+}
+
+#main .likes-container img {
+  height: 225px;
+  width: 280px;
+  display: block;
+}

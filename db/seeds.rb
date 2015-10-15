@@ -37,7 +37,7 @@ profiles = Profile.create([
   { user_id: User.all[7].id, profile_pic: File.new(Rails.root.join("app", "assets", "images","Austin.jpg")) },
   { user_id: User.all[8].id, profile_pic: File.new(Rails.root.join("app", "assets", "images","Logan.jpg")) },
   { user_id: User.all[9].id, profile_pic: File.new(Rails.root.join("app", "assets", "images","Carl.jpg")) },
-  { user_id: User.all[10].id, profile_pic: File.new(Rails.root.join("app", "assets", "images","Conz.jpg")) },
+  { user_id: User.all[10].id, profile_pic: File.new(Rails.root.join("app", "assets", "images","Constance.jpg")) },
   { user_id: User.all[11].id, profile_pic: File.new(Rails.root.join("app", "assets", "images","Jonathan.jpg")) },
   { user_id: User.all[12].id, profile_pic: File.new(Rails.root.join("app", "assets", "images","Tommy.jpg")) },
   { user_id: User.all[13].id, profile_pic: File.new(Rails.root.join("app", "assets", "images","Ariel.jpg")) },

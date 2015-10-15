@@ -30,8 +30,8 @@ OKCupid.Routers.Router = Backbone.Router.extend({
   },
 
   random: function() {
-    var id = Math.floor(Math.random() * OKCupid.Profiles.length)
-    Backbone.history.navigate('#/profiles/' + id, { trigger: true })
+    var id = Math.floor(Math.random() * OKCupid.Profiles.length)+1;
+    Backbone.history.navigate('#/profiles/' + id, { trigger: true });
   },
 
   profileShow: function(id) {

@@ -1,0 +1,19 @@
+#main .question-show-container {
+  display: block;
+  width: 850px;
+  height: auto;
+  margin: auto;
+  font-family: 'Open Sans',sans-serif;
+  background: #f3f5f9;
+  border-radius: 2px;
+  color: #474D59;
+}
+
+#main .question-show-container h1, #main .question-show-container label {
+  margin: 0 10px 0 20px;
+  font-size: 20px;
+}
+
+#main .question-show-container input {
+  margin: 0 20px;
+}

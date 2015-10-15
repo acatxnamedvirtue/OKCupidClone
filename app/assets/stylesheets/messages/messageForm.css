@@ -1,0 +1,28 @@
+#main .message-form-container {
+  display: block;
+  width: 500px;
+  height: 540px;
+  margin: auto;
+  font-family: 'Open Sans',sans-serif;
+  background: #f3f5f9;
+  border-radius: 2px;
+  color: #474D59;
+}
+
+#main .message-form-container h1, #main .message-form-container label {
+  margin: 0 20px 10px 20px;
+  font-size: 20px;
+}
+
+#main .message-form-container select, #main .message-form-container input {
+  margin: 10px 20px;
+  width: 300px;
+  font-size: 20px;
+}
+
+#main .message-form-container textarea {
+  margin: 10px 20px;
+  width: 300px;
+  height: 100px;
+  font-size: 20px;
+}

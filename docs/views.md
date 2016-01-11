@@ -19,4 +19,4 @@
 [profiles-index]: ./wireframes/profiles-index.png
 [message-form-show]: ./wireframes/message-form-show.png
 [profile-show]: ./wireframes/profile-show.png
-[question-form-show]: ./wireframs/question-form-show.png
+[question-form-show]: ./wireframes/question-form-show.png

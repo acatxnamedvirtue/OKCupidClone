@@ -1,8 +1,8 @@
 # OKClone
 
-[Heroku link][heroku]
+[Heroku Link][heroku]
 
-[heroku]: https://glacial-bastion-8978.herokuapp.com
+[heroku]: http://www.okclone.xyz
 
 ## Minimum Viable Product
 OKClone is a clone of OKCupid built on Rails and Backbone. Users can:

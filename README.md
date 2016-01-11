@@ -25,13 +25,13 @@ OKClone is a clone of OKCupid built on Rails and Backbone. Users can:
 
 ## Implementation Timeline
 
-### Phase 1: User Authentication, Profile/Messages (~1 day)
+### Phase 1: User Authentication, Profile/Messages (~2 days)
 I will implement user authentication in Backbone based on the practices learned at
 App Academy. By the end of this phase, users will be able to create/view profiles and send/receive messages using a simple text form in a Backbone view
 
 [Details][phase-one]
 
-### Phase 2: Questions and Likes (~1 days)
+### Phase 2: Questions and Likes (~1 day)
 By the end of this phase, users will be able to create/answer questions and like profiles, all inside a single Backbone app.
 
 [Details][phase-two]
@@ -44,11 +44,9 @@ This phase will consist of making the website look presentable.
 ### Bonus Features (TBD)
 - [ ] Pagination/infinite scroll
 - [x] Login via Facebook OAuth integration
-- [ ] Activity history (e.g. likes, reblogs, taggings)
+- [ ] Activity history (e.g. likes, messages, profile views)
 - [x] User avatars
 
 [phase-one]: ./docs/phases/phase1.md
 [phase-two]: ./docs/phases/phase2.md
 [phase-three]: ./docs/phases/phase3.md
-[phase-four]: ./docs/phases/phase4.md
-[phase-five]: ./docs/phases/phase5.md

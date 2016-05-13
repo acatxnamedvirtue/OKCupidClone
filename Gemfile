@@ -26,6 +26,8 @@ group :production do
 end
 
 group :development, :test do
+  gem 'capybara'
+  gem 'rspec-rails', '~> 3.0.0'
   gem 'byebug'
   gem 'better_errors'
   gem 'binding_of_caller'
@@ -34,4 +36,5 @@ group :development, :test do
 
   gem 'spring'
   gem 'rake'
+  gem 'simplecov', require: false
 end

@@ -27,10 +27,19 @@ end
 
 group :development, :test do
   gem 'capybara'
+  gem 'capybara-webkit'
+  gem 'poltergeist'
   gem 'rspec-rails', '~> 3.0.0'
   gem 'byebug'
   gem 'better_errors'
   gem 'binding_of_caller'
+  gem 'database_cleaner'
+  gem 'jasmine-core', github: 'pivotal/jasmine'
+  gem 'jasmine', github: 'pivotal/jasmine-gem'
+  gem 'factory_girl_rails'
+  gem 'launchy'
+  gem 'faker'
+  gem 'capybara-screenshot'
 
   gem 'web-console', '~> 2.0'
 

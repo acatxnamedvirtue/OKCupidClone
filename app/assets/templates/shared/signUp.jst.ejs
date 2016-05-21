@@ -17,9 +17,9 @@
   <label class='group'>
     Birthdate
     <br>
-    <input class='birthdate' type='text' name='user[month]' maxlength='2' placeholder='MM'>
-    <input class='birthdate' type='text' name='user[day]' maxlength='2' placeholder='DD'>
-    <input class='birthdate' type='text' name='user[year]' maxlength='4' placeholder='YYYY'>
+    <input id="birthdate-month" class='birthdate' type='text' name='user[month]' maxlength='2' placeholder='MM'>
+    <input id="birthdate-day" class='birthdate' type='text' name='user[day]' maxlength='2' placeholder='DD'>
+    <input id="birthdate-year" class='birthdate' type='text' name='user[year]' maxlength='4' placeholder='YYYY'>
   </label>
 
   <br><br><br>
@@ -43,8 +43,8 @@
   <label>
     Email:
     <br>
-    <input class='email' type="text" name="user[email]" placeholder='e.g. example@url.com'><br>
-    <input class='email' type='text' name='user[confirmEmail]' placeholder='Confirm email'>
+    <input id="email-1" class='email' type="text" name="user[email]" placeholder='e.g. example@url.com'><br>
+    <input id="email-2" class='email' type='text' name='user[confirmEmail]' placeholder='Confirm email'>
   </label>
 
   <br><br>
@@ -52,7 +52,7 @@
   <label>
     Password
     <br>
-    <input class='password' type='password' name="user[password]">
+    <input id="sign_up_password" class='password' type='password' name="user[password]">
   </label>
 
   <br><br>

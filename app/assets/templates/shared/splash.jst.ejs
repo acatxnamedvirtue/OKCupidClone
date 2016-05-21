@@ -1,6 +1,6 @@
 <nav class='sign-in group'>
   <span>Have an account?</span>
-  <a href="#sign-in-modal">Sign in</a>
+  <a id="sign-in-link" href="#sign-in-modal">Sign in</a>
 
 <!-- <h1>OKCupid</h1> -->
 <img src='OKCupid-logo.png'>
@@ -33,14 +33,16 @@
     <h2>Sign in</h2>
     <form class='sign-in-form'>
       <input
+        id='sign-in-username'
         type='text'
         name='user[username_or_email]'
         placeholder='Your email or username'><br>
       <input
+        id='sign-in-password'
         type='password'
         name='user[password]'
         placeholder='Password'><br>
-      <button>Let's go</button>
+      <button id='sign-in-button'>Let's go</button>
     </form>
     <br>
     <a class='password' href='#/password_reset'>Forgot your password?</a>

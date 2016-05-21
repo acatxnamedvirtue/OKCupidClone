@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :widgets
   root to: 'static_pages#root'
 
   namespace :api, defaults: { format: :json } do

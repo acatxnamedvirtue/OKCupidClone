@@ -17,12 +17,15 @@ feature "Sign up" do
   end
 
   it "logs the user in and redirects them to the profiles index on success", js: true do
-    visit root_path
-    click_link 'Continue'
     sign_up("testing")
     sleep(1)
-
     expect(page).to have_content "Browse Matches"
+  end
+
+  it "displays error messages on failure", js: true do
+    sign_up("")
+    sleep(1)
+    expect(page).to have_content "Username"
   end
 end
 
@@ -65,7 +68,7 @@ feature "Sign in" do
 
     fill_in "user[username_or_email]", with: "fake_user"
     fill_in "user[password]", with: "fake_pass"
-    click_button "Let's go"
+    click_button "Let\'s go"
 
     expect(page).to have_content "Sign in"
   end
@@ -81,13 +84,14 @@ feature "Sign in" do
                 day: "01",
                 year: "1990",
                 sex_orientation: "Straight")
+    User.last.create_profile
+
     visit root_path
     find("#sign-in-link").trigger("click")
     sleep(1)
-    fill_in "sign-in-username", with: "Tyler"
-    fill_in "sign-in-password", with: "123456"
-    find("#sign-in-button").trigger("click")
-
+    fill_in "sign-in-username", with: "testuser"
+    fill_in "sign-in-password", with: "testpass"
+    click_button "Let's go"
 
     expect(page).to have_content "Browse Matches"
   end
